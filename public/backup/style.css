@@ -1,0 +1,548 @@
+/* ===================================
+   INDO-JAPANESE BENTO DESIGN SYSTEM
+   Theme: "Sumi & Spice"
+   =================================== */
+
+:root {
+    /* Colors */
+    --sumi-black: #0f0f11;
+    --ink-gray: #1a1a1c;
+    --paper-white: #e8e8e3;
+    --vermilion: #FF4500;
+    /* Sindoor/Torii Gate Red */
+    --marigold: #FFD700;
+    /* Indian Marigold */
+    --muted-text: #888890;
+
+    /* Gradients/Textures */
+    --card-bg: #151517;
+    --card-border: rgba(255, 255, 255, 0.05);
+
+    /* Spacing */
+    --gap: 16px;
+    --d-padding: 24px;
+
+    /* Typography */
+    --font-en: 'Inter', sans-serif;
+    --font-jp: 'Noto Sans JP', sans-serif;
+    --font-hi: 'Noto Sans Devanagari', sans-serif;
+    --font-display: 'Cinzel', serif;
+}
+
+/* ===================================
+   RESET & BASE STYLES
+   =================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--sumi-black);
+    color: var(--paper-white);
+    font-family: var(--font-en);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 2rem;
+}
+
+/* Texture Overlays */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.mandala-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 80vw;
+    height: 80vw;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.mandala-bg::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 70%;
+    border: 1px solid rgba(255, 69, 0, 0.05);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ===================================
+   BENTO GRID LAYOUT
+   =================================== */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, minmax(180px, auto));
+    gap: var(--gap);
+    width: 100%;
+    max-width: 1200px;
+    z-index: 1;
+    position: relative;
+}
+
+/* Card Base Styles */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+.card-content {
+    padding: var(--d-padding);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* ===================================
+   GRID AREAS & SPANS
+   =================================== */
+/* 1. Hero Profile (Top Left Large) */
+.hero-card {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* 2. Project 1 */
+.project-1 {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* 3. Socials */
+.social-card {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* 5. Video (Vertical Tall) */
+.video-card {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* 6. Leadership (Wide) */
+.about-card {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/* 7. Project 2 */
+.project-2 {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+/* 8. Quote */
+.quote-card {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/* ===================================
+   CARD SPECIFIC STYLES
+   =================================== */
+
+/* Hero Card */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: var(--muted-text);
+}
+
+.pulse-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--vermilion);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--vermilion);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.cultural-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0.8rem;
+    color: var(--muted-text);
+    opacity: 0.6;
+}
+
+.jp-text {
+    font-family: var(--font-jp);
+}
+
+.hi-text {
+    font-family: var(--font-hi);
+}
+
+.hero-main {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-info h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 0.25rem;
+}
+
+.accent-dot {
+    color: var(--vermilion);
+}
+
+.tagline {
+    color: var(--marigold);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.bio-text {
+    font-size: 0.9rem;
+    color: var(--muted-text);
+    line-height: 1.5;
+    max-width: 300px;
+}
+
+.card-footer {
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.location-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: var(--muted-text);
+}
+
+.separator {
+    color: var(--vermilion);
+}
+
+/* Project Cards */
+.card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+    z-index: 0;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+}
+
+.card:hover .card-bg {
+    transform: scale(1.05);
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--marigold);
+    font-weight: 500;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.jp-subtitle {
+    font-family: var(--font-jp);
+    font-size: 0.8rem;
+    color: var(--muted-text);
+    letter-spacing: 2px;
+}
+
+/* Social Cards */
+.centered {
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--paper-white);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .social-icon {
+    transform: scale(1.1);
+    color: var(--vermilion);
+}
+
+/* Video Card (Vertical Layout) */
+.vertical-layout {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.jp-vertical {
+    font-family: var(--font-jp);
+    font-size: 0.8rem;
+    color: var(--marigold);
+    letter-spacing: 4px;
+}
+
+.section-title-vert {
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+.play-indicator {
+    display: flex;
+    align-items: flex-end;
+}
+
+.play-icon {
+    width: 48px;
+    height: 48px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* About/Leadership Card */
+.hi-subtitle {
+    font-family: var(--font-hi);
+    color: var(--vermilion);
+    font-size: 0.9rem;
+}
+
+.timeline-minimal {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.timeline-entry {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.timeline-entry:last-child {
+    border-bottom: none;
+}
+
+.year {
+    color: var(--muted-text);
+    font-family: "Courier New", monospace;
+}
+
+/* Map/Contact Card */
+.rotating-text {
+    width: 100px;
+    height: 100px;
+    animation: rotate 10s linear infinite;
+}
+
+.rotating-text text {
+    font-size: 14px;
+    font-family: var(--font-display);
+    fill: var(--muted-text);
+    letter-spacing: 2px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.mail-icon {
+    position: absolute;
+    font-size: 1.5rem;
+}
+
+/* Quote Card */
+.quote-text {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-style: italic;
+    color: var(--paper-white);
+    margin-bottom: 1rem;
+}
+
+.signature {
+    text-align: right;
+    border-top: 1px solid var(--vermilion);
+    display: inline-block;
+    padding-top: 0.5rem;
+    margin-left: auto;
+}
+
+.jp-sig {
+    font-family: var(--font-jp);
+    font-size: 0.8rem;
+    color: var(--muted-text);
+}
+
+/* Spotlight Effect */
+.spotlight {
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(255, 255, 255, 0.06), transparent 40%);
+    z-index: 10;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-card,
+    .about-card,
+    .quote-card {
+        grid-column: span 2;
+    }
+
+    .video-card {
+        grid-row: span 1;
+    }
+
+    body {
+        padding: 1rem;
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .bento-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cultural-text {
+        align-items: center;
+        width: 100%;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .about-card,
+    .quote-card {
+        min-height: auto;
+    }
+}

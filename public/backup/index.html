@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Engineering student portfolio - Indo-Japanese Minimalist Fusion">
+    <title>Yashwanth | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Noto+Sans+Devanagari:wght@300;400;500&family=Cinzel:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Texture -->
+    <div class="noise-overlay"></div>
+    <div class="mandala-bg"></div>
+
+    <main class="bento-grid">
+        <!-- 1. HERO PROFILE CARD (Large) -->
+        <article class="card hero-card" data-tilt>
+            <div class="card-content">
+                <div class="profile-header">
+                    <div class="status-indicator">
+                        <span class="pulse-dot"></span>
+                        <span class="status-text">Available for Research</span>
+                    </div>
+                    <div class="cultural-text">
+                        <span class="jp-text">エンジニア</span> <!-- Engineer -->
+                        <span class="hi-text">अभियंता</span> <!-- Engineer -->
+                    </div>
+                </div>
+
+                <div class="hero-main">
+                    <div class="profile-image-container">
+                        <img src="profile_zen.jpg" alt="Profile" class="profile-img">
+                    </div>
+                    <div class="hero-info">
+                        <h1>Yashwanth <span class="accent-dot">.</span></h1>
+                        <p class="tagline">Engineering Student & Researcher</p>
+                        <p class="bio-text">Bridging technology and culture. Exploring the intersection of AI, Quantum
+                            Computing, and Design.</p>
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <div class="location-pill">
+                        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none"
+                            class="location-icon">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>India <span class="separator">/</span> <span id="local-time">--:--</span></span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 2. WORK/PROJECTS (Medium) -->
+        <a href="#projects" class="card project-card project-1" data-tilt>
+            <div class="card-bg" style="background-image: url('project1.jpg')"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <div class="project-meta">
+                    <span class="project-cat">Research</span>
+                    <span class="project-year">2026</span>
+                </div>
+                <div class="project-info">
+                    <h3>Quantum Comms</h3>
+                    <p class="jp-subtitle">量子通信</p>
+                </div>
+                <div class="arrow-icon">→</div>
+            </div>
+        </a>
+
+        <!-- 3. SOCIALS (Small Square) -->
+        <a href="https://instagram.com" target="_blank" class="card social-card instagram" data-tilt>
+            <div class="card-content centered">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="social-icon">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <div class="social-label">Instagram</div>
+            </div>
+        </a>
+
+        <!-- 4. SOCIALS (Small Square) -->
+        <a href="https://linkedin.com" target="_blank" class="card social-card linkedin" data-tilt>
+            <div class="card-content centered">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="social-icon">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+                <div class="social-label">LinkedIn</div>
+            </div>
+        </a>
+
+        <!-- 5. VIDEO SHOWCASE (Tall Vertical) -->
+        <a href="#videos" class="card video-card" data-tilt>
+            <div class="card-bg" style="background-image: url('video1.jpg')"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content vertical-layout">
+                <div class="vertical-text">
+                    <span class="jp-vertical">クリエイティブ</span> <!-- Creative -->
+                    <span class="section-title-vert">VIDEO WRK</span>
+                </div>
+                <div class="play-indicator">
+                    <svg viewBox="0 0 24 24" fill="currentColor" class="play-icon">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                </div>
+            </div>
+        </a>
+
+        <!-- 6. LEADERSHIP/ABOUT (Wide) -->
+        <article class="card about-card" data-tilt>
+            <div class="card-content">
+                <div class="card-header">
+                    <h4>Student Leadership</h4>
+                    <span class="hi-subtitle">नेतृत्व</span> <!-- Leadership -->
+                </div>
+                <div class="timeline-minimal">
+                    <div class="timeline-entry">
+                        <span class="year">2025</span>
+                        <span class="role">Tech Club President</span>
+                    </div>
+                    <div class="timeline-entry">
+                        <span class="year">2024</span>
+                        <span class="role">Student Council</span>
+                    </div>
+                </div>
+                <div class="washi-tape"></div>
+            </div>
+        </article>
+
+        <!-- 7. PROJECT 2 (Medium) -->
+        <a href="#projects" class="card project-card project-2" data-tilt>
+            <div class="card-bg" style="background-image: url('project2.jpg')"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <div class="project-meta">
+                    <span class="project-cat">AI/ML</span>
+                    <span class="project-year">2025</span>
+                </div>
+                <div class="project-info">
+                    <h3>Disaster Response</h3>
+                    <p class="jp-subtitle">災害対策</p>
+                </div>
+                <div class="arrow-icon">→</div>
+            </div>
+        </a>
+
+        <!-- 8. MAP/CONTACT (Small) -->
+        <a href="#contact" class="card map-card" data-tilt>
+            <div class="card-content centered">
+                <div class="circular-text">
+                    <svg viewBox="0 0 100 100" class="rotating-text">
+                        <path id="curve" d="M 50 50 m -37 0 a 37 37 0 1 1 74 0 a 37 37 0 1 1 -74 0" fill="none" />
+                        <text>
+                            <textPath href="#curve">CONTACT • GET IN TOUCH • CONTACT •</textPath>
+                        </text>
+                    </svg>
+                    <div class="mail-icon">✉️</div>
+                </div>
+            </div>
+        </a>
+
+        <!-- 9. QUOTE/PHILOSOPHY (Wide) -->
+        <article class="card quote-card" data-tilt>
+            <div class="card-content">
+                <p class="quote-text">"Code is poetry written for machines."</p>
+                <div class="signature">
+                    <span class="jp-sig">ヤシュワント</span>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Cursor Spotlight -->
+    <div class="spotlight"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
