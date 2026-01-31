@@ -53,7 +53,7 @@ export default function QuoteCard() {
 
             <div className="card-content" style={{
                 flexDirection: 'row',
-                alignItems: 'center',
+                alignItems: 'flex-end',
                 justifyContent: 'space-between',
                 padding: '16px 24px',
                 minHeight: 'auto'
@@ -68,7 +68,7 @@ export default function QuoteCard() {
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end' }}>
                     <div style={{ width: '32px', height: '2px', backgroundColor: '#FF4500', marginBottom: '6px' }}></div>
-                    <span className="font-jp text-muted-text" style={{ fontSize: '10px' }}>ヤシュワント</span>
+                    <span className="text-muted-text" style={{ fontSize: '10px' }}>Yashwanth</span>
                 </div>
             </div>
         </article>

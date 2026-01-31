@@ -1,11 +1,93 @@
-import HeroCard from './components/HeroCard'
-import ProjectCard from './components/ProjectCard'
-import SocialCard from './components/SocialCard'
-import VideoCard from './components/VideoCard'
-import AboutCard from './components/AboutCard'
-import QuoteCard from './components/QuoteCard'
-import MapCard from './components/MapCard'
+import { Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import Navbar from './components/Navbar'
 import Spotlight from './components/Spotlight'
+import ExploreIndicator from './components/ExploreIndicator'
+import SideDecorations from './components/SideDecorations'
+import FullPageScroll from './components/FullPageScroll'
+import Home from './pages/Home'
+import Projects from './pages/Projects'
+import Videos from './pages/Videos'
+import Achievements from './pages/Achievements'
+import About from './pages/About'
+import Contact from './pages/Contact'
+
+// Page transition wrapper component
+function PageTransition({ children }) {
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        // Small delay then fade in
+        const timer = setTimeout(() => setIsVisible(true), 50);
+        return () => clearTimeout(timer);
+    }, []);
+
+    return (
+        <div className={`page-transition ${isVisible ? 'visible' : ''}`}>
+            {children}
+        </div>
+    );
+}
+
+// Animated Routes component
+function AnimatedRoutes() {
+    const location = useLocation();
+    const [displayLocation, setDisplayLocation] = useState(location);
+    const [transitionStage, setTransitionStage] = useState('fade-in');
+
+    useEffect(() => {
+        if (location !== displayLocation) {
+            setTransitionStage('fade-out');
+        }
+    }, [location, displayLocation]);
+
+    const handleAnimationEnd = () => {
+        if (transitionStage === 'fade-out') {
+            setTransitionStage('fade-in');
+            setDisplayLocation(location);
+        }
+    };
+
+    return (
+        <div
+            className={`page-wrapper ${transitionStage}`}
+            onAnimationEnd={handleAnimationEnd}
+        >
+            <Routes location={displayLocation}>
+                <Route path="/" element={
+                    <PageTransition key="home">
+                        <Home />
+                    </PageTransition>
+                } />
+                <Route path="/projects" element={
+                    <PageTransition key="projects">
+                        <Projects />
+                    </PageTransition>
+                } />
+                <Route path="/videos" element={
+                    <PageTransition key="videos">
+                        <Videos />
+                    </PageTransition>
+                } />
+                <Route path="/achievements" element={
+                    <PageTransition key="achievements">
+                        <Achievements />
+                    </PageTransition>
+                } />
+                <Route path="/about" element={
+                    <PageTransition key="about">
+                        <About />
+                    </PageTransition>
+                } />
+                <Route path="/contact" element={
+                    <PageTransition key="contact">
+                        <Contact />
+                    </PageTransition>
+                } />
+            </Routes>
+        </div>
+    );
+}
 
 function App() {
     return (
@@ -209,52 +291,17 @@ function App() {
                 ))}
             </svg>
 
-            <main className="bento-grid">
-                {/* Row 1-2: Hero + Project 1 + Socials */}
-                <HeroCard />
+            {/* Navigation */}
+            <Navbar />
 
-                <ProjectCard
-                    className="project-1"
-                    image="/backup/project1.jpg"
-                    category="Research"
-                    year="2026"
-                    title="Quantum Comms"
-                    subtitle="量子通信"
-                />
+            {/* Side Decorations */}
+            <SideDecorations />
 
-                <SocialCard
-                    className="instagram"
-                    icon="instagram"
-                    label="Instagram"
-                    href="https://instagram.com"
-                />
+            {/* Animated Routes */}
+            <AnimatedRoutes />
 
-                <SocialCard
-                    className="linkedin"
-                    icon="linkedin"
-                    label="LinkedIn"
-                    href="https://linkedin.com"
-                />
-
-                {/* Row 3-4: Video + About/Map + Project 2 */}
-                <VideoCard />
-
-                <AboutCard />
-
-                <MapCard />
-
-                <ProjectCard
-                    className="project-2"
-                    image="/backup/project2.jpg"
-                    category="AI/ML"
-                    year="2025"
-                    title="Disaster Response"
-                    subtitle="人工知能 データ流"
-                />
-
-                {/* Row 5: Quote */}
-                <QuoteCard />
-            </main>
+            {/* Explore Indicator */}
+            <ExploreIndicator />
 
             <Spotlight />
         </>

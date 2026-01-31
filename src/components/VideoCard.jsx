@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 export default function VideoCard() {
     return (
-        <a href="#videos" className="card video-card">
+        <Link to="/videos" className="card video-card">
             {/* Background Image */}
             <div
                 style={{
@@ -26,7 +28,7 @@ export default function VideoCard() {
                         transform: 'rotate(180deg)'
                     }}
                 >
-                    <span className="font-jp text-marigold" style={{ fontSize: '12px', letterSpacing: '3px' }}>クリエイティブ</span>
+                    <span className="text-marigold" style={{ fontSize: '12px', letterSpacing: '3px' }}>Creative</span>
                     <span style={{ fontWeight: 700, fontSize: '14px', letterSpacing: '2px', textTransform: 'uppercase' }}>Video Work</span>
                 </div>
 
@@ -47,6 +49,6 @@ export default function VideoCard() {
                     </div>
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }

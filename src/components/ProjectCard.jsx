@@ -1,6 +1,8 @@
-export default function ProjectCard({ className, image, category, year, title, subtitle }) {
+import { Link } from 'react-router-dom';
+
+export default function ProjectCard({ className, image, category, year, title }) {
     return (
-        <a href="#projects" className={`card ${className}`} style={{ cursor: 'pointer' }}>
+        <Link to="/projects" className={`card ${className}`} style={{ cursor: 'pointer' }}>
             {/* Background Image */}
             <div
                 style={{
@@ -30,10 +32,9 @@ export default function ProjectCard({ className, image, category, year, title, s
                 {/* Title at Bottom */}
                 <div style={{ marginTop: 'auto' }}>
                     <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '4px' }}>{title}</h3>
-                    <p className="font-jp text-muted-text" style={{ fontSize: '14px', letterSpacing: '0.05em' }}>{subtitle}</p>
                     <div style={{ fontSize: '18px', marginTop: '8px', color: 'rgba(232,232,227,0.6)' }}>→</div>
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }

@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 export default function MapCard() {
     return (
-        <a href="#contact" className="card map-card">
+        <Link to="/contact" className="card map-card">
             <div className="card-content centered" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                 <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {/* Rotating Text */}
@@ -16,6 +18,6 @@ export default function MapCard() {
                     <div style={{ position: 'absolute', fontSize: '20px' }}>✉️</div>
                 </div>
             </div>
-        </a>
+        </Link>
     )
 }
