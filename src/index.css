@@ -3148,6 +3148,63 @@ body {
         padding: 8px 16px;
         font-size: 12px;
     }
+
+    /* Compact Achievement Cards for Mobile */
+    .achievement-card {
+        flex-direction: row !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        padding: 16px !important;
+        min-height: auto !important;
+        gap: 16px !important;
+    }
+
+    .achievement-icon {
+        width: 40px !important;
+        height: 40px !important;
+        flex-shrink: 0;
+        margin-bottom: 0 !important;
+    }
+
+    .achievement-icon svg {
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .achievement-content {
+        align-items: flex-start !important;
+        width: 100%;
+    }
+
+    .achievement-header {
+        justify-content: flex-start !important;
+        margin-bottom: 4px !important;
+        flex-wrap: wrap;
+    }
+
+    .achievement-title {
+        font-size: 15px !important;
+        margin-bottom: 4px !important;
+    }
+
+    .achievement-description {
+        font-size: 13px !important;
+        text-align: left !important;
+        margin-bottom: 0 !important;
+        /* Remove bottom margin if any */
+    }
+
+    .achievement-highlight-badge {
+        top: 8px !important;
+        right: 8px !important;
+        width: 20px !important;
+        height: 20px !important;
+    }
+
+    .achievement-highlight-badge svg {
+        width: 12px !important;
+        height: 12px !important;
+    }
 }
 
 @media (max-width: 480px) {
