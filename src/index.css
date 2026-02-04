@@ -2825,12 +2825,57 @@ body {
 }
 
 /* ========== ADDITIONAL MOBILE IMPROVEMENTS ========== */
-/* Larger Phones and Small Tablets (600px) */
-@media (max-width: 600px) {
+/* Video Card Styles */
+.video-text-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(232, 232, 227, 0.9);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.video-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.video-title-text {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.play-button-container {
+    display: flex;
+    align-items: flex-end;
+}
+
+.play-circle {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(232, 232, 227, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-icon {
+    width: 20px;
+    height: 20px;
+    color: #e8e8e3;
+    margin-left: 4px;
+}
+
+/* ========== ADDITIONAL MOBILE IMPROVEMENTS ========== */
+/* Tablet and Mobile (850px) - Switch to single column earlier */
+@media (max-width: 850px) {
     .bento-grid {
         display: flex !important;
         flex-direction: column !important;
-        gap: 12px;
+        gap: 16px;
     }
 
     .bento-grid>* {
@@ -2940,6 +2985,42 @@ body {
         padding: 0.5rem 0.625rem;
         font-size: 11px;
         white-space: nowrap;
+    }
+
+    /* Video Card Mobile Overrides */
+    .video-text-container {
+        writing-mode: horizontal-tb;
+        transform: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        order: 2;
+    }
+
+    .video-card .vertical-layout {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .video-label {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .video-title-text {
+        font-size: 16px;
+    }
+
+    .play-button-container {
+        order: 1;
+    }
+
+    .play-circle {
+        width: 40px;
+        height: 40px;
     }
 
     /* Social Cards */
