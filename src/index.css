@@ -2828,33 +2828,95 @@ body {
 /* Larger Phones and Small Tablets (600px) */
 @media (max-width: 600px) {
     .bento-grid {
-        grid-template-columns: 1fr;
+        display: flex !important;
+        flex-direction: column !important;
         gap: 12px;
     }
 
+    .bento-grid>* {
+        width: 100% !important;
+        min-height: auto !important;
+    }
+
+    /* Reset all explicit grid positions */
     .hero-card,
     .project-1,
     .project-2,
+    .instagram,
+    .linkedin,
+    .github,
+    .email,
     .video-card,
     .about-card,
     .map-card,
     .quote-card,
     .skills-card,
     .services-card,
-    .instagram,
-    .linkedin,
-    .github,
-    .email {
-        grid-column: span 1 !important;
-        grid-row: span 1 !important;
+    footer {
+        grid-column: auto !important;
+        grid-row: auto !important;
     }
 
     .hero-card {
-        min-height: 300px;
+        min-height: 280px !important;
+        order: 1;
     }
 
+    .project-1 {
+        height: 200px;
+        order: 2;
+    }
+
+    .instagram {
+        order: 3;
+    }
+
+    .linkedin {
+        order: 4;
+    }
+
+    .github {
+        order: 5;
+    }
+
+    .email {
+        order: 6;
+    }
+
+    .video-card {
+        height: 250px;
+        order: 7;
+    }
+
+    .skills-card {
+        order: 8;
+    }
+
+    .map-card {
+        height: 200px;
+        order: 9;
+    }
+
+    .project-2 {
+        height: 200px;
+        order: 10;
+    }
+
+    .quote-card {
+        order: 11;
+    }
+
+    .services-card {
+        order: 12;
+    }
+
+    footer {
+        order: 13;
+    }
+
+    /* Card styling */
     .card {
-        min-height: auto;
+        border-radius: 12px;
     }
 
     /* Navbar horizontal scroll */
@@ -2867,6 +2929,7 @@ body {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
+        flex-wrap: nowrap;
     }
 
     .nav-links::-webkit-scrollbar {
@@ -2879,14 +2942,11 @@ body {
         white-space: nowrap;
     }
 
-    /* Project Card Mobile */
-    .project-card {
-        height: 200px;
-    }
-
-    /* Social Cards Inline */
+    /* Social Cards */
     .social-card {
         padding: 1rem;
+        height: auto !important;
+        min-height: 80px !important;
     }
 
     .social-card .icon-container {
@@ -2897,11 +2957,6 @@ body {
     .social-card .icon-container svg {
         width: 20px;
         height: 20px;
-    }
-
-    /* Video Card Mobile */
-    .video-card {
-        max-height: 250px;
     }
 }
 
