@@ -2825,6 +2825,86 @@ body {
 }
 
 /* ========== ADDITIONAL MOBILE IMPROVEMENTS ========== */
+/* Larger Phones and Small Tablets (600px) */
+@media (max-width: 600px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .hero-card,
+    .project-1,
+    .project-2,
+    .video-card,
+    .about-card,
+    .map-card,
+    .quote-card,
+    .skills-card,
+    .services-card,
+    .instagram,
+    .linkedin,
+    .github,
+    .email {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    .hero-card {
+        min-height: 300px;
+    }
+
+    .card {
+        min-height: auto;
+    }
+
+    /* Navbar horizontal scroll */
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .nav-links {
+        gap: 0.25rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0.625rem;
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    /* Project Card Mobile */
+    .project-card {
+        height: 200px;
+    }
+
+    /* Social Cards Inline */
+    .social-card {
+        padding: 1rem;
+    }
+
+    .social-card .icon-container {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-card .icon-container svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Video Card Mobile */
+    .video-card {
+        max-height: 250px;
+    }
+}
+
 @media (max-width: 480px) {
     #root {
         padding: 0.75rem;
