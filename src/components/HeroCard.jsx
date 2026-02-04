@@ -67,10 +67,10 @@ export default function HeroCard() {
                             Kamsani Yashwanth Chowdhary <span className="text-vermilion">.</span>
                         </h1>
                         <p className="text-marigold" style={{ fontWeight: 500, fontSize: '14px', marginTop: '4px' }}>
-                            Engineering Student & Researcher
+                            ECE (VLSI) Undergraduate | AI & Embedded Systems
                         </p>
                         <p className="text-muted-text" style={{ fontSize: '12px', marginTop: '8px', lineHeight: 1.5, maxWidth: '280px' }}>
-                            Bridging technology and culture. Exploring the intersection of AI, Quantum Computing, and Design.
+                            I vibe code. Passionate about autonomous systems, quantum computing, and embedded solutions. 2x Hackathon Winner.
                         </p>
                     </div>
                 </div>
@@ -85,7 +85,8 @@ export default function HeroCard() {
                         <span>India <span className="text-vermilion" style={{ margin: '0 4px' }}>/</span> {time}</span>
                     </div>
                     <a
-                        href="#resume"
+                        href="/resume.pdf"
+                        download="Kamsani_Yashwanth_Resume.pdf"
                         style={{
                             display: 'flex',
                             alignItems: 'center',

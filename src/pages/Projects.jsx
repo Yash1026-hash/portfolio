@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { projects, categories } from '../data/projects';
 import ProjectDetailCard from '../components/ProjectDetailCard';
+import ProjectModal from '../components/ProjectModal';
 import CategoryFilter from '../components/CategoryFilter';
 import Footer from '../components/Footer';
 
 export default function Projects() {
     const [activeCategory, setActiveCategory] = useState('All');
+    const [selectedProject, setSelectedProject] = useState(null);
 
     const filteredProjects = activeCategory === 'All'
         ? projects
@@ -43,7 +45,13 @@ export default function Projects() {
             {/* Projects Grid */}
             <div className="projects-grid">
                 {filteredProjects.map((project) => (
-                    <ProjectDetailCard key={project.id} project={project} />
+                    <div
+                        key={project.id}
+                        onClick={() => setSelectedProject(project)}
+                        className="project-card-wrapper"
+                    >
+                        <ProjectDetailCard project={project} />
+                    </div>
                 ))}
             </div>
 
@@ -58,6 +66,14 @@ export default function Projects() {
             <div className="projects-footer">
                 <Footer />
             </div>
+
+            {/* Project Modal */}
+            {selectedProject && (
+                <ProjectModal
+                    project={selectedProject}
+                    onClose={() => setSelectedProject(null)}
+                />
+            )}
         </div>
     );
 }

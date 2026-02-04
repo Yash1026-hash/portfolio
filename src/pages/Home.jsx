@@ -17,17 +17,17 @@ export default function Home() {
 
                 <ProjectCard
                     className="project-1"
-                    image="/backup/project1.jpg"
+                    image="/quantum.png"
                     category="Research"
-                    year="2026"
-                    title="Quantum Comms"
+                    year="2025"
+                    title="Quantum Simulator"
                 />
 
                 <SocialCard
                     className="instagram"
                     icon="instagram"
                     label="Instagram"
-                    href="https://instagram.com"
+                    href="https://www.instagram.com/existential_crisis_0/"
                 />
 
                 <SocialCard
@@ -60,10 +60,10 @@ export default function Home() {
 
                 <ProjectCard
                     className="project-2"
-                    image="/backup/project2.jpg"
+                    image="/traffic.png"
                     category="AI/ML"
-                    year="2025"
-                    title="Disaster Response"
+                    year="2024"
+                    title="Smart Traffic"
                 />
 
                 {/* Row 5: Quote + Services */}

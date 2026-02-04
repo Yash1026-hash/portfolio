@@ -1,8 +1,8 @@
 export default function VideoCard({ video }) {
-    const { title, category, duration, description, thumbnail, youtubeId, views, date } = video;
+    const { title, category, description, thumbnail, videoUrl, platform, tools } = video;
 
     const handleClick = () => {
-        window.open(`https://www.youtube.com/watch?v=${youtubeId}`, '_blank');
+        window.open(videoUrl, '_blank');
     };
 
     return (
@@ -22,8 +22,8 @@ export default function VideoCard({ video }) {
                     </div>
                 </div>
 
-                {/* Duration Badge */}
-                <span className="duration-badge">{duration}</span>
+                {/* Platform Badge */}
+                <span className="duration-badge">{platform}</span>
 
                 {/* Category Badge */}
                 <span className="video-category-badge">{category}</span>
@@ -34,16 +34,11 @@ export default function VideoCard({ video }) {
                 <h3 className="video-title">{title}</h3>
                 <p className="video-description">{description}</p>
 
-                {/* Meta Info */}
+                {/* Tools Used */}
                 <div className="video-meta">
-                    <span className="video-views">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                            <circle cx="12" cy="12" r="3" />
-                        </svg>
-                        {views} views
-                    </span>
-                    <span className="video-date">{date}</span>
+                    {tools && tools.map((tool, index) => (
+                        <span key={index} className="video-tool-badge">{tool}</span>
+                    ))}
                 </div>
             </div>
         </div>

@@ -4,57 +4,55 @@ import Footer from '../components/Footer';
 export default function About() {
     const education = [
         {
-            degree: 'B.Tech in Computer Science & Engineering',
-            institution: 'Your University Name',
-            location: 'City, India',
-            period: '2022 - 2026',
-            grade: 'CGPA: 9.2/10',
+            degree: 'B.Tech in Electronics and Communication Engineering (VLSI)',
+            institution: 'KL Deemed University',
+            location: 'Telangana, India',
+            period: '2023 - 2027',
+            grade: 'CGPA: 8.29/10',
             highlights: [
-                'Specialization in AI/ML and Quantum Computing',
-                'Dean\'s List for Academic Excellence',
-                'Active member of Technical Club'
+                'Specialization in VLSI Design',
+                'Vice President - Aparmaya Club (AI & Autonomous Systems)',
+                'Core Member - PULSE Broadcasting ECE Student Body'
             ]
         },
         {
-            degree: 'Higher Secondary (XII)',
-            institution: 'Your School Name',
-            location: 'City, India',
-            period: '2020 - 2022',
-            grade: 'Percentage: 95%',
+            degree: 'Diploma in Electronics and Communication Engineering',
+            institution: 'Anurag Engineering College',
+            location: 'Telangana, India',
+            period: '2021 - 2024',
+            grade: 'CGPA: 9.18/10',
             highlights: [
-                'Science Stream with Computer Science',
-                'School Topper in Mathematics',
-                'National Level Science Olympiad Participant'
+                'Strong foundation in electronics fundamentals',
+                'Hands-on hardware projects'
             ]
         },
         {
-            degree: 'Secondary School (X)',
-            institution: 'Your School Name',
-            location: 'City, India',
-            period: '2020',
-            grade: 'Percentage: 92%',
+            degree: 'SSC (10th Standard)',
+            institution: 'ZPHS Konijerla',
+            location: 'Telangana, India',
+            period: '2021',
+            grade: 'CGPA: 10/10',
             highlights: [
-                'School Academic Excellence Award',
-                'Inter-school Coding Competition Winner'
+                'Perfect 10 CGPA',
+                'School academic excellence'
             ]
         }
     ];
 
     const skills = {
-        'Languages': ['Python', 'JavaScript', 'TypeScript', 'C++', 'Java'],
-        'Frontend': ['React', 'Next.js', 'HTML/CSS', 'Tailwind'],
-        'Backend': ['Node.js', 'FastAPI', 'Django', 'Express'],
-        'AI/ML': ['TensorFlow', 'PyTorch', 'Scikit-learn', 'OpenCV'],
-        'Cloud': ['AWS', 'Google Cloud', 'Azure', 'Docker'],
-        'Databases': ['PostgreSQL', 'MongoDB', 'Redis', 'Firebase']
+        'Programming': ['C', 'C++', 'Verilog HDL', 'Python'],
+        'AI & Vision': ['OpenCV', 'YOLO v8l', 'ResNet', 'Object Detection'],
+        'Embedded': ['ESP32', 'Raspberry Pi 4', 'Hardware-Software Integration'],
+        'EDA Tools': ['Cadence', 'LTSpice', 'Vivado', 'MATLAB', 'EasyEDA', 'Multisim'],
+        'Other': ['Docker', 'Quantum Communication', 'Circuit Design']
     };
 
     const interests = [
         { icon: '🔬', label: 'Quantum Computing' },
-        { icon: '🤖', label: 'Artificial Intelligence' },
-        { icon: '🌐', label: 'Web Development' },
-        { icon: '📡', label: 'Satellite Communications' },
-        { icon: '🎨', label: 'UI/UX Design' },
+        { icon: '🤖', label: 'AI & Autonomous Systems' },
+        { icon: '🔌', label: 'VLSI Design' },
+        { icon: '📡', label: 'Embedded Systems' },
+        { icon: '🚗', label: 'Autonomous Vehicles' },
         { icon: '📚', label: 'Research' }
     ];
 
@@ -74,7 +72,7 @@ export default function About() {
                 </div>
 
                 <p className="page-description">
-                    Engineering student passionate about bridging technology and innovation.
+                    Engineering student passionate about exploring and learning new technologies.
                 </p>
             </div>
 
@@ -86,31 +84,30 @@ export default function About() {
                     </div>
                     <div className="bio-text">
                         <h2>Kamsani Yashwanth Chowdhary</h2>
-                        <p className="bio-tagline">Engineering Student & Researcher</p>
+                        <p className="bio-tagline">ECE (VLSI) Undergraduate | AI & Embedded Systems Enthusiast</p>
                         <p className="bio-description">
-                            I'm a passionate engineering student exploring the intersection of AI,
-                            Quantum Computing, and Design. Currently pursuing my B.Tech, I spend my time
-                            building innovative projects, contributing to open source, and researching
-                            cutting-edge technologies.
+                            Enthusiastic and curious engineering student passionate about exploring and learning
+                            new technologies. An Electronics and Communication Engineering (VLSI) undergraduate
+                            with growing interests across multiple domains including hardware, software, and
+                            emerging research areas.
                         </p>
                         <p className="bio-description">
-                            My journey in tech started with a curiosity about how things work, which
-                            evolved into a deep passion for creating solutions that make a difference.
-                            From disaster response systems to quantum communication simulations, I love
-                            tackling challenging problems.
+                            Always eager to adapt, innovate, and contribute meaningfully to diverse projects
+                            and collaborative environments. From autonomous vehicles to quantum communication,
+                            I love tackling challenging problems at the intersection of hardware and software.
                         </p>
                         <div className="bio-quick-facts">
                             <div className="quick-fact">
                                 <span className="fact-icon">📍</span>
-                                <span>Based in India</span>
+                                <span>Telangana, India</span>
                             </div>
                             <div className="quick-fact">
                                 <span className="fact-icon">🎓</span>
-                                <span>B.Tech Student</span>
+                                <span>B.Tech ECE (VLSI)</span>
                             </div>
                             <div className="quick-fact">
                                 <span className="fact-icon">💼</span>
-                                <span>Open to Research</span>
+                                <span>Open to Opportunities</span>
                             </div>
                         </div>
                     </div>

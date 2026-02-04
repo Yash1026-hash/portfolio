@@ -1,96 +1,69 @@
-// Achievements data for the portfolio
+// Centralized achievements data for the portfolio - REAL DATA
 export const achievements = [
     {
         id: 1,
-        title: 'Hackathon Winner - Smart India Hackathon',
+        title: '3rd Prize - Urban Vision Hackathon',
         category: 'Competition',
-        year: '2025',
-        description: 'First place in the national Smart India Hackathon for developing an AI-powered disaster response system.',
-        icon: 'trophy',
+        year: '2024',
+        description: 'Smart Urban Traffic Reduction project at IISC Bangalore. Built real-time object detection system using YOLO v8l and ResNet for optimizing traffic signals.',
+        organization: 'IISC Bangalore',
         highlight: true
     },
     {
         id: 2,
-        title: 'Research Paper Published - IEEE',
-        category: 'Research',
-        year: '2025',
-        description: 'Published research on Quantum Key Distribution simulation in IEEE International Conference proceedings.',
-        icon: 'document',
+        title: '3rd Prize - VR Siddhartha Hackathon',
+        category: 'Competition',
+        year: '2023',
+        description: 'Lane Keeping Car project demonstrating autonomous vehicle capabilities using OpenCV and Raspberry Pi 4.',
+        organization: 'VR Siddhartha University',
         highlight: true
     },
     {
         id: 3,
-        title: 'Google Cloud Certified - Professional',
+        title: 'Cadence Spectre Level 1',
         category: 'Certification',
-        year: '2025',
-        description: 'Achieved Google Cloud Professional certification for cloud architecture and machine learning.',
-        icon: 'badge',
+        year: '2024',
+        description: 'Professional certification in Cadence Spectre simulation tool for analog circuit design and verification.',
+        organization: 'Cadence Design Systems',
         highlight: false
     },
     {
         id: 4,
-        title: 'Dean\'s List - Academic Excellence',
-        category: 'Academic',
+        title: 'Embedded Systems and IoT Level 1',
+        category: 'Certification',
         year: '2024',
-        description: 'Recognized on the Dean\'s List for maintaining outstanding academic performance with 9.2 CGPA.',
-        icon: 'star',
-        highlight: true
-    },
-    {
-        id: 5,
-        title: 'Open Source Contributor - 500+ Contributions',
-        category: 'Open Source',
-        year: '2024',
-        description: 'Active contributor to major open source projects including React ecosystem and Python libraries.',
-        icon: 'code',
+        description: 'Certification covering embedded systems fundamentals and Internet of Things applications.',
+        organization: 'Professional Certification',
         highlight: false
     },
     {
-        id: 6,
-        title: 'AWS Solutions Architect Associate',
-        category: 'Certification',
+        id: 5,
+        title: 'Vice President - Aparmaya Club',
+        category: 'Leadership',
         year: '2024',
-        description: 'Certified AWS Solutions Architect with expertise in designing distributed systems.',
-        icon: 'badge',
+        description: 'Leading AI & Autonomous Systems projects at the college technical club. Organizing workshops and hackathons.',
+        organization: 'KL Deemed University',
+        highlight: true
+    },
+    {
+        id: 6,
+        title: 'Core Member - PULSE Broadcasting',
+        category: 'Leadership',
+        year: '2024',
+        description: 'Active member of the ECE Student Body broadcasting team, contributing to department communications.',
+        organization: 'KL University ECE Department',
         highlight: false
     },
     {
         id: 7,
-        title: 'Best Project Award - College Symposium',
+        title: 'Perfect 10 CGPA - SSC',
         category: 'Academic',
-        year: '2024',
-        description: 'Won best project award for innovative AI-based traffic management system.',
-        icon: 'trophy',
-        highlight: false
-    },
-    {
-        id: 8,
-        title: 'Coding Competition - State Level Winner',
-        category: 'Competition',
-        year: '2023',
-        description: 'First place in state-level competitive programming contest among 500+ participants.',
-        icon: 'trophy',
+        year: '2021',
+        description: 'Achieved perfect 10/10 CGPA in 10th Standard examinations at ZPHS Konijerla.',
+        organization: 'ZPHS Konijerla',
         highlight: true
-    },
-    {
-        id: 9,
-        title: 'Microsoft Azure Fundamentals',
-        category: 'Certification',
-        year: '2023',
-        description: 'Certified in Microsoft Azure cloud fundamentals and services.',
-        icon: 'badge',
-        highlight: false
-    },
-    {
-        id: 10,
-        title: 'Technical Paper Presentation - 1st Place',
-        category: 'Academic',
-        year: '2023',
-        description: 'Won first place in inter-college technical paper presentation on quantum computing applications.',
-        icon: 'document',
-        highlight: false
     }
 ];
 
-// Get unique categories
+// Get unique categories from achievements
 export const achievementCategories = ['All', ...new Set(achievements.map(a => a.category))];

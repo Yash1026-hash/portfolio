@@ -1,23 +1,15 @@
 export default function SkillsCard() {
     const skills = [
         {
-            name: 'React',
+            name: 'VLSI',
             icon: (
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ width: '16px', height: '16px' }}>
-                    <circle cx="12" cy="12" r="3"></circle>
-                    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(0 12 12)"></ellipse>
-                    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"></ellipse>
-                    <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"></ellipse>
-                </svg>
-            )
-        },
-        {
-            name: 'Python',
-            icon: (
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ width: '16px', height: '16px' }}>
-                    <path d="M12 2c-1.7 0-3 1.3-3 3v4c0 1.7-1.3 3-3 3H4c-1.1 0-2 .9-2 2v2c0 1.7 1.3 3 3 3h14c1.7 0 3-1.3 3-3v-2c0-1.1-.9-2-2-2h-2c-1.7 0-3-1.3-3-3V5c0-1.7-1.3-3-3-3z"></path>
-                    <circle cx="9" cy="6" r="1" fill="currentColor"></circle>
-                    <circle cx="15" cy="18" r="1" fill="currentColor"></circle>
+                    <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                    <path d="M4 12h16M12 4v16"></path>
+                    <circle cx="8" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="16" cy="8" r="1" fill="currentColor"></circle>
+                    <circle cx="8" cy="16" r="1" fill="currentColor"></circle>
+                    <circle cx="16" cy="16" r="1" fill="currentColor"></circle>
                 </svg>
             )
         },
@@ -40,8 +32,15 @@ export default function SkillsCard() {
                     <circle cx="12" cy="12" r="8"></circle>
                     <line x1="12" y1="2" x2="12" y2="6"></line>
                     <line x1="12" y1="18" x2="12" y2="22"></line>
-                    <line x1="2" y1="12" x2="6" y2="12"></line>
-                    <line x1="18" y1="12" x2="22" y2="12"></line>
+                </svg>
+            )
+        },
+        {
+            name: 'Video Edit',
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" style={{ width: '16px', height: '16px' }}>
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                    <polygon points="10 9 16 12 10 15 10 9" fill="currentColor"></polygon>
                 </svg>
             )
         }
@@ -51,7 +50,7 @@ export default function SkillsCard() {
         <article className="card skills-card">
             <div className="card-content">
                 <div>
-                    <h4 style={{ fontSize: '14px', fontWeight: 600 }}>Tech Stack</h4>
+                    <h4 style={{ fontSize: '14px', fontWeight: 600 }}>Expertise</h4>
                 </div>
 
                 <div style={{
