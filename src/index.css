@@ -2793,6 +2793,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translateY(2px);
+    /* Optical adjustment */
 }
 
 .monogram {
