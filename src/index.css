@@ -2907,6 +2907,40 @@ body {
 }
 
 /* ========== ADDITIONAL MOBILE IMPROVEMENTS ========== */
+/* Laptop and Tablet Landscape (1200px) */
+@media (max-width: 1200px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-rows: auto !important;
+    }
+
+    .hero-card,
+    .quote-card,
+    .footer {
+        grid-column: span 2 !important;
+    }
+
+    .project-1,
+    .project-2,
+    .video-card,
+    .map-card,
+    .skills-card,
+    .services-card,
+    .about-card,
+    .instagram,
+    .linkedin,
+    .github,
+    .email {
+        grid-column: span 1 !important;
+        grid-row: auto !important;
+    }
+
+    .projects-grid,
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
 /* Tablet and Mobile (850px) - Switch to single column earlier */
 @media (max-width: 850px) {
     .bento-grid {
@@ -2918,6 +2952,7 @@ body {
     .bento-grid>* {
         width: 100% !important;
         min-height: auto !important;
+        max-width: 100% !important;
     }
 
     /* Reset all explicit grid positions */
@@ -3096,9 +3131,20 @@ body {
 
     /* Projects Page Mobile */
     .projects-grid {
-        grid-template-columns: 1fr !important;
-        gap: 20px;
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 24px;
         padding-bottom: 20px;
+        width: 100% !important;
+    }
+
+    .project-detail-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+    }
+
+    .project-image-container {
+        height: 180px !important;
     }
 
     .project-card-wrapper {
