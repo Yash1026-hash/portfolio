@@ -19,12 +19,21 @@ export default function Contact() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate form submission
+
+        // Construct mailto URL with form data
+        const { name, email, subject, message } = formData;
+        const bodyContent = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        const mailtoLink = `mailto:yashwanthchowdhary83@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyContent)}`;
+
+        // Open default email client
+        window.location.href = mailtoLink;
+
+        // Show success state briefly
         setTimeout(() => {
             setIsSubmitting(false);
             setSubmitted(true);
             setFormData({ name: '', email: '', subject: '', message: '' });
-        }, 1500);
+        }, 1000);
     };
 
     const socialLinks = [
