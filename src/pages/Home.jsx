@@ -36,13 +36,12 @@ export default function Home() {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
                         <div className="mono-label" style={{ marginBottom: '16px' }}>[ INITIALIZING_NEURAL_CORE... OK ]</div>
-                        <h1 style={{ fontSize: 'clamp(48px, 12vw, 120px)', lineHeight: '0.9', fontWeight: 200, marginBottom: '24px' }}>
-                            SYNTAX // <br />
-                            <span style={{ color: 'var(--color-neon-red)' }}>FRAMES_</span>
+                        <h1 style={{ fontSize: 'clamp(48px, 12vw, 120px)', lineHeight: '0.9', fontWeight: 200, marginBottom: '24px', letterSpacing: '-2px' }}>
+                            I VIBECODE <br />
+                            <span style={{ color: 'var(--color-neon-red)' }}>& LEARN_</span>
                         </h1>
                         <p style={{ fontSize: '20px', color: 'var(--color-ash)', opacity: 0.7, marginBottom: '48px', maxWidth: '600px', fontFamily: 'var(--font-mono)' }}>
-                            Vibing with code. Shooting & editing film. Reading extensively. 
-                            Constantly pushing to learn more. A high-precision hybrid of technical logic and creative vision.
+                            Shooting & editing film. Reading extensively. Constantly pushing boundaries to learn more and build better. A hybrid of technical precision and creative output.
                         </p>
                         <motion.div 
                             style={{ display: 'flex', gap: '24px' }}
