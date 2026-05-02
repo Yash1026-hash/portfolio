@@ -16,7 +16,7 @@ export default function Contact() {
                             <a href="mailto:yashwanthchowdhary83@gmail.com" className="btn-primary-red" style={{ justifyContent: 'center', padding: '16px' }}>
                                 OPEN_MAIL_CLIENT
                             </a>
-                            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="btn-primary-red" style={{ justifyContent: 'center', padding: '16px', background: 'transparent', border: '1px solid var(--color-neon-red)' }}>
+                            <a href="https://www.linkedin.com/in/kamsani-yashwanth-chowdhary" target="_blank" rel="noreferrer" className="btn-primary-red" style={{ justifyContent: 'center', padding: '16px', background: 'transparent', border: '1px solid var(--color-neon-red)' }}>
                                 LINKEDIN_PROFILE
                             </a>
                         </div>

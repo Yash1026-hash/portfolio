@@ -14,11 +14,11 @@ export default function Footer() {
             <div className="container">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div style={{ opacity: 0.5 }}>
-                        © {year} KAMSANI_YASHWANTH_CHOWDHARY // SYSTEM_VERSION_3.0
+                        © {year} K_YASHWANTH_CHOWDHARY // SYSTEM_VERSION_3.0
                     </div>
                     <div style={{ display: 'flex', gap: '32px' }}>
                         <a href="https://github.com/Yash1026-hash" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>GITHUB</a>
-                        <a href="https://linkedin.com" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>LINKEDIN</a>
+                        <a href="https://www.linkedin.com/in/kamsani-yashwanth-chowdhary" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>LINKEDIN</a>
                     </div>
                 </div>
             </div>

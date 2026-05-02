@@ -16,8 +16,8 @@ export default function Navbar() {
         <nav className="navbar-war-room">
             <div className="container">
                 <div className="nav-container">
-                    <Link to="/" style={{ color: 'var(--color-neon-red)', textDecoration: 'none', fontWeight: 800, fontSize: '20px', letterSpacing: '4px' }}>
-                        YASH_
+                    <Link to="/" style={{ color: 'var(--color-neon-red)', textDecoration: 'none', fontWeight: 800, fontSize: '18px', letterSpacing: '2px' }}>
+                        K_YASHWANTH_CHOWDHARY_
                     </Link>
 
                     <div style={{ display: 'flex', gap: '32px' }}>
