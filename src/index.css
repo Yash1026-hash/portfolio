@@ -3,23 +3,60 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap');
 
 :root {
-  /* --- CRIMSON INTELLIGENCE PALETTE --- */
-  --color-void: #000000;
-  --color-surface-dark: #0a0a0a;
-  --color-surface-elevated: #151515;
-  --color-neon-red: #ff3b3b;
-  --color-blood-red: #8b0000;
-  --color-ash: #e6e6e6;
-  --color-slate-gray: #4a4a4a;
+  /* --- MONOCHROME PALETTE (DARK) --- */
+  --bg-primary: #050505;
+  --bg-secondary: #0f0f0f;
+  --bg-tertiary: #1a1a1a;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  
+  --accent: #ffffff;
+  --accent-secondary: #0ea5e9; /* Clean cyan for tech elements */
+  
+  --hud-border: 1px solid rgba(255, 255, 255, 0.1);
+  --hud-border-raw: 255, 255, 255, 0.1;
+  --hud-glow: 0 0 20px rgba(14, 165, 233, 0.15);
+  --scanline-color: rgba(255, 255, 255, 0.03);
+  --hex-grid-color: %23ffffff;
+  --hex-opacity: 0.05;
+  --nav-bg: linear-gradient(to bottom, rgba(5,5,5,0.9), transparent);
+  
+  /* Map old variables temporarily to prevent breaking */
+  --color-void: var(--bg-primary);
+  --color-surface-dark: var(--bg-secondary);
+  --color-surface-elevated: var(--bg-tertiary);
+  --color-neon-red: var(--accent-secondary);
+  --color-ash: var(--text-primary);
+  --color-slate-gray: var(--text-secondary);
+  --border-hud: var(--hud-border);
+  --shadow-red-glow: var(--hud-glow);
   
   /* --- TYPOGRAPHY --- */
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Fraunces', serif;
   --font-mono: 'JetBrains Mono', monospace;
+}
 
-  /* --- HUD ELEMENTS --- */
-  --shadow-red-glow: 0 0 20px rgba(255, 59, 59, 0.2);
-  --border-hud: 1px solid rgba(255, 59, 59, 0.15);
+[data-theme='light'] {
+  /* --- MONOCHROME PALETTE (LIGHT) --- */
+  --bg-primary: #fcfcfc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f4f4f5;
+  
+  --text-primary: #171717;
+  --text-secondary: #525252;
+  
+  --accent: #000000;
+  --accent-secondary: #0284c7;
+  
+  --hud-border: 1px solid rgba(0, 0, 0, 0.1);
+  --hud-border-raw: 0, 0, 0, 0.1;
+  --hud-glow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --scanline-color: rgba(0, 0, 0, 0.03);
+  --hex-grid-color: %23000000;
+  --hex-opacity: 0.05;
+  --nav-bg: linear-gradient(to bottom, rgba(252,252,252,0.95), rgba(252,252,252,0.8), transparent);
 }
 
 * {
@@ -43,8 +80,8 @@ body {
   inset: 0;
   z-index: 9998;
   pointer-events: none;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-  background-size: 100% 2px, 3px 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0) 50%, var(--scanline-color) 50%);
+  background-size: 100% 2px;
 }
 
 .scanlines::after {
@@ -54,7 +91,7 @@ body {
   left: 0;
   width: 100%;
   height: 100px;
-  background: linear-gradient(0deg, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 0.05) 50%, rgba(255, 0, 0, 0) 100%);
+  background: linear-gradient(0deg, transparent 0%, var(--scanline-color) 50%, transparent 100%);
   animation: scanline 10s linear infinite;
 }
 
@@ -62,9 +99,9 @@ body {
   position: fixed;
   inset: 0;
   z-index: 0;
-  opacity: 0.1;
+  opacity: var(--hex-opacity);
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0' stroke='%23ff3b3b' stroke-width='1'/%3E%3C/svg%3E");
+  background-image: var(--hex-grid, url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0' stroke='%23888888' stroke-width='1'/%3E%3C/svg%3E"));
   background-size: 60px 52px;
 }
 
@@ -97,14 +134,14 @@ h1, h2, h3 {
   width: 100%;
   padding: 24px;
   z-index: 1000;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+  background: var(--nav-bg);
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(var(--hud-border-raw));
   padding-bottom: 12px;
 }
 
@@ -152,8 +189,8 @@ h1, h2, h3 {
 
 /* Buttons */
 .btn-primary-red {
-  background: var(--color-neon-red);
-  color: white;
+  background: var(--accent);
+  color: var(--bg-primary);
   border: none;
   padding: 12px 24px;
   font-family: var(--font-mono);
@@ -169,8 +206,8 @@ h1, h2, h3 {
 }
 
 .btn-primary-red:hover {
-  background: white;
-  color: var(--color-neon-red);
+  background: var(--text-secondary);
+  color: var(--bg-primary);
 }
 
 /* HUD Overlay */

@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
     const location = useLocation();
@@ -36,6 +37,9 @@ export default function Navbar() {
                                 {link.label}
                             </Link>
                         ))}
+                        <div style={{ marginLeft: '16px', paddingLeft: '24px', borderLeft: '1px solid var(--border-hud)' }}>
+                            <ThemeToggle />
+                        </div>
                     </div>
                 </div>
             </div>

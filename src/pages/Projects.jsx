@@ -28,8 +28,8 @@ export default function Projects() {
                             onClick={() => setActiveCategory(category)}
                             className={`nav-link-red ${activeCategory === category ? 'active' : ''}`}
                             style={{ 
-                                background: activeCategory === category ? 'rgba(255, 59, 59, 0.1)' : 'transparent',
-                                border: '1px solid rgba(255, 59, 59, 0.2)',
+                                background: activeCategory === category ? 'var(--bg-tertiary)' : 'transparent',
+                                border: 'var(--hud-border)',
                                 padding: '8px 24px',
                                 borderRadius: '2px',
                                 cursor: 'pointer'
@@ -40,12 +40,12 @@ export default function Projects() {
                     ))}
                 </div>
 
-                <div style={{ display: 'grid', gap: '2px', background: 'rgba(255, 59, 59, 0.1)' }}>
+                <div style={{ display: 'grid', gap: '2px', background: 'var(--bg-tertiary)' }}>
                     {filteredProjects.map((project) => (
                         <div key={project.id} className="card-tactical" style={{ border: 'none', display: 'grid', gridTemplateColumns: '80px 1fr 300px 150px', alignItems: 'center' }}>
                             <div style={{ fontFamily: 'var(--font-mono)', opacity: 0.3, fontSize: '14px' }}>0{project.id}</div>
                             <div>
-                                <h3 style={{ fontSize: '24px', color: 'white' }}>{project.title}</h3>
+                                <h3 style={{ fontSize: '24px', color: 'var(--text-primary)' }}>{project.title}</h3>
                                 <div style={{ display: 'flex', gap: '16px', marginTop: '4px' }}>
                                     <span className="mono-label" style={{ fontSize: '10px' }}>{project.category}</span>
                                     <span className="mono-label" style={{ fontSize: '10px', color: '#555' }}>{project.year}</span>

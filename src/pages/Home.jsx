@@ -52,7 +52,7 @@ export default function Home() {
                             <Link to="/contact" className="btn-primary-red">
                                 INITIATE_CONTACT
                             </Link>
-                            <Link to="/projects" style={{ color: 'white', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '13px', display: 'flex', alignItems: 'center' }}>
+                            <Link to="/projects" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '13px', display: 'flex', alignItems: 'center' }}>
                                 VIEW_REPOSITORIES
                             </Link>
                         </motion.div>
@@ -66,8 +66,8 @@ export default function Home() {
                     transition={{ delay: 0.6, duration: 1.5, ease: "easeOut" }}
                     style={{ position: 'absolute', right: '5%', top: '50%', transform: 'translateY(-50%)', x, y }}
                 >
-                    <div style={{ width: '400px', height: '400px', border: '1px solid var(--color-neon-red)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <div style={{ width: '300px', height: '300px', border: '1px dashed var(--color-neon-red)', borderRadius: '50%', animation: 'spin 20s linear infinite' }}></div>
+                    <div style={{ width: '400px', height: '400px', border: 'var(--hud-border)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ width: '300px', height: '300px', border: 'var(--hud-border)', borderStyle: 'dashed', borderRadius: '50%', animation: 'spin 20s linear infinite' }}></div>
                         <div style={{ position: 'absolute', fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--color-neon-red)' }}>
                             SEC_ZONE_9 <br />
                             ACTIVE_SCN
@@ -77,7 +77,7 @@ export default function Home() {
             </section>
 
             {/* FEATURED PROJECTS: THE WAR ROOM INDEX */}
-            <section style={{ padding: '120px 0', background: 'rgba(255, 0, 0, 0.02)' }}>
+            <section style={{ padding: '120px 0', background: 'var(--bg-tertiary)' }}>
                 <div className="container">
                     <div style={{ marginBottom: '80px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                         <div>
@@ -97,13 +97,13 @@ export default function Home() {
                                     <span className="mono-label">{project.category}</span>
                                     <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', opacity: 0.5 }}>#{project.id}</span>
                                 </div>
-                                <h3 style={{ fontSize: '28px', marginBottom: '16px', color: 'white' }}>{project.title}</h3>
+                                <h3 style={{ fontSize: '28px', marginBottom: '16px', color: 'var(--text-primary)' }}>{project.title}</h3>
                                 <p style={{ color: 'var(--color-ash)', opacity: 0.6, fontSize: '15px', marginBottom: '32px', height: '80px', overflow: 'hidden' }}>
                                     {project.description}
                                 </p>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
                                     {project.techStack.map(tech => (
-                                        <span key={tech} style={{ fontSize: '10px', color: 'var(--color-neon-red)', border: '1px solid rgba(255, 59, 59, 0.2)', padding: '2px 8px', borderRadius: '2px', fontFamily: 'var(--font-mono)' }}>
+                                        <span key={tech} style={{ fontSize: '10px', color: 'var(--color-neon-red)', border: 'var(--hud-border)', padding: '2px 8px', borderRadius: '2px', fontFamily: 'var(--font-mono)' }}>
                                             {tech}
                                         </span>
                                     ))}
@@ -121,7 +121,7 @@ export default function Home() {
             <section style={{ padding: '120px 0' }}>
                 <div className="container">
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
-                        <div style={{ background: '#050505', padding: '48px', border: '1px solid #111' }}>
+                        <div style={{ background: 'var(--bg-secondary)', padding: '48px', border: 'var(--hud-border)' }}>
                             <div className="mono-label" style={{ marginBottom: '24px' }}>TERMINAL_OUTPUT</div>
                             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', lineHeight: '1.8', color: '#555' }}>
                                 {`> systemctl start research_core`} <br />
@@ -130,7 +130,7 @@ export default function Home() {
                                 <span style={{ color: 'var(--color-neon-red)' }}>{`> optimal_found: true`}</span> <br />
                                 {`> status: mission_ready`} <br />
                                 <br />
-                                <span style={{ color: 'white' }}>$ portfolio --info --all</span>
+                                <span style={{ color: 'var(--text-primary)' }}>$ portfolio --info --all</span>
                             </div>
                         </div>
                         <div>

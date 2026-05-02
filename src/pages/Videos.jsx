@@ -28,8 +28,8 @@ export default function Videos() {
                             onClick={() => setActiveCategory(category)}
                             className={`nav-link-red ${activeCategory === category ? 'active' : ''}`}
                             style={{ 
-                                background: activeCategory === category ? 'rgba(255, 59, 59, 0.1)' : 'transparent',
-                                border: '1px solid rgba(255, 59, 59, 0.2)',
+                                background: activeCategory === category ? 'var(--bg-tertiary)' : 'transparent',
+                                border: 'var(--hud-border)',
                                 padding: '8px 24px',
                                 borderRadius: '2px',
                                 cursor: 'pointer'
@@ -43,15 +43,15 @@ export default function Videos() {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '32px' }}>
                     {filteredVideos.map((video) => (
                         <div key={video.id} className="card-tactical">
-                            <div style={{ position: 'relative', marginBottom: '24px', aspectRatio: '16/9', background: '#050505', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #222' }}>
+                            <div style={{ position: 'relative', marginBottom: '24px', aspectRatio: '16/9', background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'var(--hud-border)' }}>
                                 <div className="mono-label" style={{ opacity: 0.3 }}>MEDIA_PLACEHOLDER</div>
-                                <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'var(--color-neon-red)', color: 'white', padding: '4px 8px', fontSize: '10px', fontFamily: 'var(--font-mono)' }}>{video.platform.toUpperCase()}</div>
+                                <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'var(--accent)', color: 'var(--bg-primary)', padding: '4px 8px', fontSize: '10px', fontFamily: 'var(--font-mono)' }}>{video.platform.toUpperCase()}</div>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
                                 <span className="mono-label">{video.category}</span>
                                 <span className="mono-label" style={{ color: '#555' }}>ID_{video.id}</span>
                             </div>
-                            <h3 style={{ fontSize: '24px', marginBottom: '12px', color: 'white' }}>{video.title}</h3>
+                            <h3 style={{ fontSize: '24px', marginBottom: '12px', color: 'var(--text-primary)' }}>{video.title}</h3>
                             <p style={{ color: 'var(--color-ash)', opacity: 0.6, fontSize: '14px', marginBottom: '24px', lineHeight: '1.6' }}>
                                 {video.description}
                             </p>

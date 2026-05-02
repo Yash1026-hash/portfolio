@@ -35,7 +35,7 @@ export default function About() {
                 <section className="card-tactical" style={{ marginBottom: '80px', display: 'grid', gridTemplateColumns: '300px 1fr', gap: '64px', alignItems: 'center' }}>
                     <div style={{ position: 'relative' }}>
                         <img src="/backup/profile_zen.jpg" alt="Profile" style={{ width: '100%', filter: 'grayscale(1) contrast(1.2)' }} />
-                        <div style={{ position: 'absolute', inset: 0, border: '1px solid var(--color-neon-red)', opacity: 0.3 }}></div>
+                        <div style={{ position: 'absolute', inset: 0, border: 'var(--hud-border)', opacity: 0.3 }}></div>
                     </div>
                     <div style={{ minWidth: 0 }}>
                         <div className="mono-label">IDENTITY_RECORD // SEC_01</div>
@@ -52,8 +52,8 @@ export default function About() {
                     <section className="card-tactical">
                         <div className="mono-label" style={{ marginBottom: '32px' }}>ACADEMIC_HISTORY</div>
                         {education.map((edu, i) => (
-                            <div key={i} style={{ marginBottom: '32px', borderLeft: '1px solid rgba(255, 59, 59, 0.2)', paddingLeft: '24px' }}>
-                                <h3 style={{ fontSize: '20px', color: 'white' }}>{edu.degree}</h3>
+                            <div key={i} style={{ marginBottom: '32px', borderLeft: 'var(--hud-border)', paddingLeft: '24px' }}>
+                                <h3 style={{ fontSize: '20px', color: 'var(--text-primary)' }}>{edu.degree}</h3>
                                 <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4px' }}>
                                     <span style={{ fontSize: '14px', color: 'var(--color-ash)', opacity: 0.6 }}>{edu.institution}</span>
                                     <span className="mono-label" style={{ fontSize: '10px' }}>{edu.period}</span>
@@ -70,7 +70,7 @@ export default function About() {
                                 <h4 style={{ fontSize: '12px', color: 'var(--color-slate-gray)', marginBottom: '12px', fontFamily: 'var(--font-mono)' }}>{cat.toUpperCase()}</h4>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
                                     {list.map(s => (
-                                        <span key={s} style={{ fontSize: '11px', color: 'white', background: '#111', padding: '4px 12px', border: '1px solid #222' }}>{s}</span>
+                                        <span key={s} style={{ fontSize: '11px', color: 'var(--text-primary)', background: 'var(--bg-tertiary)', padding: '4px 12px', border: 'var(--hud-border)' }}>{s}</span>
                                     ))}
                                 </div>
                             </div>
