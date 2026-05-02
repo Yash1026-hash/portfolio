@@ -217,18 +217,17 @@ h1, h2, h3 {
 /* HUD Overlay */
 .hud-line {
   position: absolute;
-  background: var(--color-neon-red);
-  opacity: 0.3;
+  background: var(--accent-secondary);
+  opacity: 0.2;
 }
 
 .crimson-intelligence {
-  animation: flicker 0.15s infinite;
+  /* Removed aggressive flicker to ensure a clean, smooth aesthetic */
+  position: relative;
 }
 
 @keyframes flicker {
-  0% { opacity: 0.98; }
-  5% { opacity: 0.99; }
-  10% { opacity: 0.97; }
+  0% { opacity: 1; }
   100% { opacity: 1; }
 }
 

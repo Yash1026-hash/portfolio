@@ -16,12 +16,12 @@ export default function Contact() {
                             <a href="mailto:yashwanthchowdhary83@gmail.com" className="btn-primary-red" style={{ justifyContent: 'center', padding: '16px' }}>
                                 OPEN_MAIL_CLIENT
                             </a>
-                            <a href="https://www.linkedin.com/in/kamsani-yashwanth-chowdhary" target="_blank" rel="noreferrer" className="btn-primary-red" style={{ justifyContent: 'center', padding: '16px', background: 'transparent', border: '1px solid var(--color-neon-red)' }}>
+                            <a href="https://www.linkedin.com/in/kamsani-yashwanth-chowdhary" target="_blank" rel="noreferrer" className="btn-primary-red" style={{ justifyContent: 'center', padding: '16px', background: 'transparent', border: '1px solid var(--accent-secondary)', color: 'var(--text-primary)' }}>
                                 LINKEDIN_PROFILE
                             </a>
                         </div>
 
-                        <div style={{ marginTop: '80px', display: 'flex', justifyContent: 'center', gap: '64px', borderTop: '1px solid #111', paddingTop: '40px' }}>
+                        <div style={{ marginTop: '80px', display: 'flex', justifyContent: 'center', gap: '64px', borderTop: 'var(--hud-border)', paddingTop: '40px' }}>
                             <div style={{ textAlign: 'left' }}>
                                 <div className="mono-label">COORDINATES</div>
                                 <div style={{ fontSize: '14px', fontWeight: 600 }}>INDIA // IST (UTC+5:30)</div>
