@@ -10,31 +10,29 @@ export default function Projects() {
         : projects.filter(p => p.category === activeCategory);
 
     return (
-        <div className="projects-page obsidian-void" style={{ paddingTop: '160px' }}>
-            <div className="antimetal-grid" style={{ opacity: 0.02 }}></div>
-            
+        <div className="projects-page" style={{ paddingTop: '160px' }}>
             <div className="container">
-                <div className="page-header" style={{ marginBottom: '80px' }}>
-                    <div className="micro-label">Repository Catalog</div>
-                    <h1 className="heading-display" style={{ fontSize: '72px', margin: '16px 0 32px' }}>Index.</h1>
-                    <p className="text-muted" style={{ fontSize: '18px', maxWidth: '600px' }}>
-                        A systematic collection of technical research and engineering projects.
+                <div style={{ marginBottom: '80px' }}>
+                    <div className="mono-label">[ ACCESS_GRANTED ]</div>
+                    <h1 style={{ fontSize: '72px', margin: '16px 0', fontWeight: 200 }}>REPOSITORY_INDEX</h1>
+                    <p style={{ color: 'var(--color-ash)', opacity: 0.6, fontSize: '18px', maxWidth: '600px', fontFamily: 'var(--font-mono)' }}>
+                        Secure access to project telemetry and research frameworks.
                     </p>
                 </div>
 
-                {/* Filters */}
-                <div style={{ display: 'flex', gap: '8px', marginBottom: '64px', overflowX: 'auto', paddingBottom: '8px' }}>
+                {/* Filter */}
+                <div style={{ display: 'flex', gap: '8px', marginBottom: '64px' }}>
                     {categories.map((category) => (
                         <button
                             key={category}
                             onClick={() => setActiveCategory(category)}
-                            className="btn-raycast"
+                            className={`nav-link-red ${activeCategory === category ? 'active' : ''}`}
                             style={{ 
-                                background: activeCategory === category ? 'white' : 'transparent',
-                                color: activeCategory === category ? 'var(--color-void-black)' : 'var(--color-slate-200)',
-                                border: '1px solid var(--color-graphite-500)',
-                                padding: '6px 16px',
-                                fontSize: '13px'
+                                background: activeCategory === category ? 'rgba(255, 59, 59, 0.1)' : 'transparent',
+                                border: '1px solid rgba(255, 59, 59, 0.2)',
+                                padding: '8px 24px',
+                                borderRadius: '2px',
+                                cursor: 'pointer'
                             }}
                         >
                             {category}
@@ -42,33 +40,28 @@ export default function Projects() {
                     ))}
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '16px' }}>
+                <div style={{ display: 'grid', gap: '2px', background: 'rgba(255, 59, 59, 0.1)' }}>
                     {filteredProjects.map((project) => (
-                        <div key={project.id} className="glass-card" style={{ display: 'grid', gridTemplateColumns: '100px 1fr 300px auto', alignItems: 'center', padding: '24px 32px' }}>
-                            <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-graphite-500)' }}>
-                                {String(project.id).padStart(3, '0')}
-                            </div>
+                        <div key={project.id} className="card-tactical" style={{ border: 'none', display: 'grid', gridTemplateColumns: '80px 1fr 300px 150px', alignItems: 'center' }}>
+                            <div style={{ fontFamily: 'var(--font-mono)', opacity: 0.3, fontSize: '14px' }}>0{project.id}</div>
                             <div>
                                 <h3 style={{ fontSize: '24px', color: 'white' }}>{project.title}</h3>
-                                <div style={{ display: 'flex', gap: '12px', marginTop: '4px' }}>
-                                    <span className="micro-label" style={{ fontSize: '10px' }}>{project.category}</span>
-                                    <span className="micro-label" style={{ fontSize: '10px' }}>{project.year}</span>
+                                <div style={{ display: 'flex', gap: '16px', marginTop: '4px' }}>
+                                    <span className="mono-label" style={{ fontSize: '10px' }}>{project.category}</span>
+                                    <span className="mono-label" style={{ fontSize: '10px', color: '#555' }}>{project.year}</span>
                                 </div>
                             </div>
-                            <div style={{ color: 'var(--color-slate-300)', fontSize: '14px', paddingRight: '32px' }}>
-                                {project.description.substring(0, 80)}...
+                            <div style={{ color: 'var(--color-ash)', opacity: 0.5, fontSize: '14px', paddingRight: '40px' }}>
+                                {project.description.substring(0, 100)}...
                             </div>
-                            <a href={project.githubUrl} target="_blank" rel="noreferrer" className="btn-raycast btn-ghost" style={{ fontSize: '12px' }}>
-                                View Source
+                            <a href={project.githubUrl} target="_blank" rel="noreferrer" className="btn-primary-red" style={{ fontSize: '11px', padding: '8px', justifyContent: 'center' }}>
+                                VIEW_CORE
                             </a>
                         </div>
                     ))}
                 </div>
             </div>
-
-            <div style={{ marginTop: '120px' }}>
-                <Footer />
-            </div>
+            <Footer />
         </div>
     );
 }

@@ -3,41 +3,23 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap');
 
 :root {
-  /* --- CORE PALETTE (Raycast Obsidian) --- */
-  --color-void-black: #040506;
-  --color-deep-charcoal: #07080a;
-  --color-graphite-700: #111214;
-  --color-graphite-600: #1b1c1e;
-  --color-graphite-500: #363739;
-  
-  /* --- ACCENTS (Antimetal + Raycast) --- */
-  --color-chartreuse-pulse: #d0f100;
-  --color-ember-red: #ff6363;
-  --color-snow: #ffffff;
-  --color-slate-300: #6a6b6c;
-  --color-slate-200: #9c9c9d;
+  /* --- CRIMSON INTELLIGENCE PALETTE --- */
+  --color-void: #000000;
+  --color-surface-dark: #0a0a0a;
+  --color-surface-elevated: #151515;
+  --color-neon-red: #ff3b3b;
+  --color-blood-red: #8b0000;
+  --color-ash: #e6e6e6;
+  --color-slate-gray: #4a4a4a;
   
   /* --- TYPOGRAPHY --- */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Inter', sans-serif;
   --font-serif: 'Fraunces', serif;
   --font-mono: 'JetBrains Mono', monospace;
 
-  /* --- SPACING & RADIUS --- */
-  --spacing-unit: 8px;
-  --radius-cards: 16px;
-  --radius-pill: 9999px;
-  --radius-buttons: 8px; /* Raycast style buttons */
-
-  /* --- SHADOWS (Tactile Raycast) --- */
-  --shadow-keyboard: rgba(0, 0, 0, 0.4) 0px 1.5px 0.5px 2.5px, 
-                     rgb(0, 0, 0) 0px 0px 0.5px 1px, 
-                     rgba(0, 0, 0, 0.25) 0px 2px 1px 1px inset, 
-                     rgba(255, 255, 255, 0.15) 0px 1px 1px 1px inset;
-
-  --shadow-glass: rgba(0, 0, 0, 0.28) 0px 1.189px 2.377px 0px;
-  
-  /* --- ATMOSPHERE --- */
-  --gradient-nebula: radial-gradient(84.6% 73.49% at 50% 26.51%, rgba(4, 63, 150, 0.3), rgba(6, 18, 37, 0.05));
+  /* --- HUD ELEMENTS --- */
+  --shadow-red-glow: 0 0 20px rgba(255, 59, 59, 0.2);
+  --border-hud: 1px solid rgba(255, 59, 59, 0.15);
 }
 
 * {
@@ -49,172 +31,168 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-void-black);
-  color: var(--color-snow);
+  background-color: var(--color-void);
+  color: var(--color-ash);
   line-height: 1.5;
   overflow-x: hidden;
 }
 
-/* --- ANTIMETAL CENTRAL PATTERN --- */
-.antimetal-grid {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 800px;
-  height: 600px;
-  opacity: 0.04;
-  pointer-events: none;
-  z-index: 0;
-  background-image: radial-gradient(var(--color-chartreuse-pulse) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-.hex-pattern {
+/* --- THE WAR ROOM BACKGROUND --- */
+.scanlines {
   position: fixed;
   inset: 0;
-  opacity: 0.03;
+  z-index: 9998;
   pointer-events: none;
-  z-index: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E");
-  background-size: 120px 104px;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  background-size: 100% 2px, 3px 100%;
 }
 
-/* --- TYPOGRAPHY --- */
+.scanlines::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(0deg, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 0.05) 50%, rgba(255, 0, 0, 0) 100%);
+  animation: scanline 10s linear infinite;
+}
+
+.hex-grid-red {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0' stroke='%23ff3b3b' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 60px 52px;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100vh); }
+  100% { transform: translateY(100vh); }
+}
+
+/* --- TYPOGRAPHY SYSTEM --- */
 h1, h2, h3 {
   font-family: var(--font-serif);
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: -0.01em;
-  font-feature-settings: "ss04", "ss06", "ss09", "ss10", "ss11";
 }
 
-.heading-display {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  letter-spacing: -0.11em; /* Raycast Compressed */
-  line-height: 1.0;
-}
-
-.micro-label {
+.mono-label {
+  font-family: var(--font-mono);
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 500;
-  color: var(--color-slate-300);
-}
-
-/* --- LAYOUT --- */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  position: relative;
-  z-index: 1;
-}
-
-.section {
-  padding: 120px 0;
+  letter-spacing: 0.3em;
+  color: var(--color-neon-red);
 }
 
 /* --- COMPONENTS --- */
 
-/* Raycast Pill Navbar */
-.navbar {
+.navbar-war-room {
   position: fixed;
-  top: 32px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px;
   z-index: 1000;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
 }
 
-.navbar-content {
-  background: rgba(27, 28, 30, 0.8);
-  backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-pill);
-  padding: 8px 12px;
+.nav-container {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  box-shadow: var(--shadow-keyboard);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 12px;
 }
 
-.nav-link {
-  color: var(--color-slate-200);
+.nav-link-red {
+  color: var(--color-slate-gray);
   text-decoration: none;
-  font-size: 13px;
-  padding: 6px 16px;
-  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 12px;
   transition: all 0.2s ease;
 }
 
-.nav-link:hover, .nav-link.active {
-  color: var(--color-snow);
-  background: rgba(255, 255, 255, 0.05);
+.nav-link-red:hover, .nav-link-red.active {
+  color: var(--color-neon-red);
 }
 
-/* Glass Card (Raycast + Titan Graphics) */
-.glass-card {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(40px);
-  border-radius: var(--radius-cards);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+/* Tactical Cards */
+.card-tactical {
+  background: var(--color-surface-dark);
+  border: var(--border-hud);
   padding: 32px;
-  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: var(--shadow-glass);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-.glass-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.12);
-  transform: translateY(-4px);
+.card-tactical::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0%;
+  background: var(--color-neon-red);
+  transition: height 0.3s ease;
+}
+
+.card-tactical:hover {
+  background: var(--color-surface-elevated);
+  box-shadow: var(--shadow-red-glow);
+}
+
+.card-tactical:hover::before {
+  height: 100%;
 }
 
 /* Buttons */
-.btn-raycast {
-  background: var(--color-snow);
-  color: var(--color-void-black);
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 14px;
+.btn-primary-red {
+  background: var(--color-neon-red);
+  color: white;
   border: none;
+  padding: 12px 24px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  text-decoration: none;
+  gap: 12px;
   transition: all 0.2s ease;
+  text-decoration: none;
 }
 
-.btn-raycast:hover {
-  background: var(--color-chartreuse-pulse);
+.btn-primary-red:hover {
+  background: white;
+  color: var(--color-neon-red);
 }
 
-.btn-ghost {
-  background: transparent;
-  color: var(--color-slate-200);
-  border: 1px solid var(--color-graphite-500);
-}
-
-.btn-ghost:hover {
-  border-color: var(--color-snow);
-  color: var(--color-snow);
-}
-
-/* Titan Graphics (Line Art) */
-.blueprint-graphic {
+/* HUD Overlay */
+.hud-line {
   position: absolute;
-  opacity: 0.1;
-  pointer-events: none;
+  background: var(--color-neon-red);
+  opacity: 0.3;
 }
 
-/* Noise Overlay */
-.noise-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.02;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+.crimson-intelligence {
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.98; }
+  5% { opacity: 0.99; }
+  10% { opacity: 0.97; }
+  100% { opacity: 1; }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }

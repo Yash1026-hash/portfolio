@@ -6,74 +6,75 @@ export default function About() {
             degree: 'B.Tech in Electronics and Communication Engineering (VLSI)',
             institution: 'KL Deemed University',
             period: '2023 - 2027',
-            grade: 'CGPA: 8.29/10'
+            grade: '8.29 CGPA',
+            highlights: ['Specialization in VLSI Design', 'Vice President - Aparmaya Club', 'Core Member - PULSE Broadcasting']
         },
         {
             degree: 'Diploma in Electronics and Communication Engineering',
             institution: 'Anurag Engineering College',
             period: '2021 - 2024',
-            grade: 'CGPA: 9.18/10'
+            grade: '9.18 CGPA'
+        },
+        {
+            degree: 'SSC (10th Standard)',
+            institution: 'ZPHS Konijerla',
+            period: '2021',
+            grade: '10/10 CGPA'
         }
     ];
 
     const skills = {
-        'Programming': ['C', 'C++', 'Verilog', 'Python'],
-        'AI & Vision': ['OpenCV', 'YOLO', 'ResNet'],
-        'EDA Tools': ['Cadence', 'LTSpice', 'Vivado', 'MATLAB']
+        'Programming': ['C', 'C++', 'Verilog HDL', 'Python'],
+        'AI & Vision': ['OpenCV', 'YOLO v8l', 'ResNet', 'Object Detection'],
+        'EDA Tools': ['Cadence', 'LTSpice', 'Vivado', 'MATLAB', 'EasyEDA', 'Multisim']
     };
 
     return (
-        <div className="about-page obsidian-void" style={{ paddingTop: '160px' }}>
+        <div className="about-page" style={{ paddingTop: '160px' }}>
             <div className="container">
-                <section className="glass-card" style={{ padding: '64px', marginBottom: '80px', background: 'var(--gradient-nebula)' }}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '250px 1fr', gap: '64px', alignItems: 'center' }}>
-                        <img 
-                            src="/backup/profile_zen.jpg" 
-                            alt="Profile" 
-                            style={{ width: '100%', borderRadius: '12px', filter: 'grayscale(1)', border: '1px solid var(--color-graphite-500)' }} 
-                        />
-                        <div>
-                            <div className="micro-label" style={{ color: 'var(--color-chartreuse-pulse)' }}>Profile_Bio</div>
-                            <h1 className="heading-display" style={{ fontSize: '48px', margin: '16px 0 24px' }}>Yashwanth <br /> Chowdhary.</h1>
-                            <p style={{ fontSize: '18px', color: 'var(--color-slate-200)', lineHeight: '1.6' }}>
-                                Engineering student focused on VLSI Design, Autonomous Systems, and Quantum Research. 
-                                Architecting digital infrastructure through a mix of high-level software and low-level hardware integration.
-                            </p>
-                        </div>
+                <section className="card-tactical" style={{ marginBottom: '80px', display: 'grid', gridTemplateColumns: '300px 1fr', gap: '64px', alignItems: 'center' }}>
+                    <div style={{ position: 'relative' }}>
+                        <img src="/backup/profile_zen.jpg" alt="Profile" style={{ width: '100%', filter: 'grayscale(1) contrast(1.2)' }} />
+                        <div style={{ position: 'absolute', inset: 0, border: '1px solid var(--color-neon-red)', opacity: 0.3 }}></div>
+                    </div>
+                    <div>
+                        <div className="mono-label">IDENTITY_RECORD // SEC_01</div>
+                        <h1 style={{ fontSize: '64px', margin: '16px 0 32px', fontWeight: 200 }}>Yashwanth_C</h1>
+                        <p style={{ fontSize: '18px', color: 'var(--color-ash)', opacity: 0.7, lineHeight: '1.8' }}>
+                            Electronics and Communication Engineering student specialized in VLSI. 
+                            Research focus in AI-driven automation, autonomous systems, and 
+                            high-performance circuit design.
+                        </p>
                     </div>
                 </section>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
-                    <section className="glass-card">
-                        <div className="micro-label">Education</div>
-                        <div style={{ marginTop: '32px' }}>
-                            {education.map((edu, index) => (
-                                <div key={index} style={{ marginBottom: '32px', borderLeft: '1px solid var(--color-graphite-500)', paddingLeft: '24px' }}>
-                                    <h3 style={{ fontSize: '20px', color: 'white' }}>{edu.degree}</h3>
-                                    <p className="text-muted">{edu.institution}</p>
-                                    <div style={{ display: 'flex', gap: '16px', marginTop: '8px' }}>
-                                        <span className="micro-label" style={{ fontSize: '10px' }}>{edu.period}</span>
-                                        <span className="micro-label" style={{ fontSize: '10px' }}>{edu.grade}</span>
-                                    </div>
+                    <section className="card-tactical">
+                        <div className="mono-label" style={{ marginBottom: '32px' }}>ACADEMIC_HISTORY</div>
+                        {education.map((edu, i) => (
+                            <div key={i} style={{ marginBottom: '32px', borderLeft: '1px solid rgba(255, 59, 59, 0.2)', paddingLeft: '24px' }}>
+                                <h3 style={{ fontSize: '20px', color: 'white' }}>{edu.degree}</h3>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4px' }}>
+                                    <span style={{ fontSize: '14px', color: 'var(--color-ash)', opacity: 0.6 }}>{edu.institution}</span>
+                                    <span className="mono-label" style={{ fontSize: '10px' }}>{edu.period}</span>
                                 </div>
-                            ))}
-                        </div>
+                                <div style={{ marginTop: '8px', color: 'var(--color-neon-red)', fontFamily: 'var(--font-mono)', fontSize: '12px' }}>{edu.grade}</div>
+                            </div>
+                        ))}
                     </section>
 
-                    <section className="glass-card">
-                        <div className="micro-label">Technical Stack</div>
-                        <div style={{ marginTop: '32px', display: 'grid', gridTemplateColumns: '1fr', gap: '24px' }}>
-                            {Object.entries(skills).map(([category, list]) => (
-                                <div key={category}>
-                                    <h4 style={{ fontSize: '14px', color: 'var(--color-slate-300)', marginBottom: '12px' }}>{category}</h4>
-                                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                                        {list.map(s => (
-                                            <span key={s} style={{ fontSize: '12px', background: 'rgba(255,255,255,0.05)', padding: '4px 12px', borderRadius: '4px', fontFamily: 'var(--font-mono)' }}>{s}</span>
-                                        ))}
-                                    </div>
+                    <section className="card-tactical">
+                        <div className="mono-label" style={{ marginBottom: '32px' }}>TECHNICAL_SPECIFICATIONS</div>
+                        {Object.entries(skills).map(([cat, list]) => (
+                            <div key={cat} style={{ marginBottom: '24px' }}>
+                                <h4 style={{ fontSize: '12px', color: 'var(--color-slate-gray)', marginBottom: '12px', fontFamily: 'var(--font-mono)' }}>{cat.toUpperCase()}</h4>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                                    {list.map(s => (
+                                        <span key={s} style={{ fontSize: '11px', color: 'white', background: '#111', padding: '4px 12px', border: '1px solid #222' }}>{s}</span>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </section>
                 </div>
             </div>

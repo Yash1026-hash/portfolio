@@ -1,75 +1,80 @@
-import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { featuredProjects } from '../data/projects'
 import Footer from '../components/Footer'
 
 export default function Home() {
     return (
-        <main className="obsidian-void">
-            {/* ANTIMETAL PATTERNS */}
-            <div className="antimetal-grid"></div>
-            <div className="hex-pattern"></div>
-
-            {/* HERO SECTION */}
-            <section className="section" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-                <div className="container" style={{ background: 'var(--gradient-nebula)', padding: '100px 0', borderRadius: '100%' }}>
-                    <div className="micro-label" style={{ color: 'var(--color-chartreuse-pulse)', marginBottom: '24px' }}>
-                        Research & Infrastructure
+        <main style={{ minHeight: '100vh' }}>
+            {/* HERO SECTION: MISSION BRIEFING */}
+            <section style={{ height: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
+                <div className="container">
+                    <div style={{ maxWidth: '800px' }}>
+                        <div className="mono-label" style={{ marginBottom: '16px' }}>[ INITIALIZING_NEURAL_CORE... OK ]</div>
+                        <h1 style={{ fontSize: 'clamp(48px, 12vw, 120px)', lineHeight: '0.9', fontWeight: 200, marginBottom: '24px' }}>
+                            CRIMSON <br />
+                            <span style={{ color: 'var(--color-neon-red)' }}>INTELLIGENCE_</span>
+                        </h1>
+                        <p style={{ fontSize: '20px', color: 'var(--color-ash)', opacity: 0.7, marginBottom: '48px', maxWidth: '600px', fontFamily: 'var(--font-mono)' }}>
+                            High-precision technical architecture for 
+                            observability, quantum research, and AI infrastructure.
+                        </p>
+                        <div style={{ display: 'flex', gap: '24px' }}>
+                            <Link to="/projects" className="btn-primary-red">
+                                ACCESS_REPOSITORIES
+                            </Link>
+                            <a href="https://github.com/Yash1026-hash" target="_blank" rel="noreferrer" style={{ color: 'white', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '13px', display: 'flex', alignItems: 'center' }}>
+                                VIEW_SOURCE_CONTROL
+                            </a>
+                        </div>
                     </div>
-                    <h1 className="heading-display" style={{ fontSize: 'clamp(48px, 10vw, 96px)', marginBottom: '32px' }}>
-                        The Obsidian <br /> Engine.
-                    </h1>
-                    <p className="text-muted" style={{ fontSize: '20px', maxWidth: '600px', margin: '0 auto 48px' }}>
-                        A precision-engineered portfolio showcasing 
-                        AI-driven observability and quantum research.
-                    </p>
-                    <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
-                        <Link to="/projects" className="btn-raycast">
-                            Launch Catalog
-                        </Link>
-                        <a href="https://github.com/Yash1026-hash" target="_blank" rel="noreferrer" className="btn-raycast btn-ghost">
-                            Source Control
-                        </a>
+                </div>
+
+                {/* Tactical HUD Element (Right) */}
+                <div style={{ position: 'absolute', right: '5%', top: '50%', transform: 'translateY(-50%)', opacity: 0.3 }}>
+                    <div style={{ width: '400px', height: '400px', border: '1px solid var(--color-neon-red)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{ width: '300px', height: '300px', border: '1px dashed var(--color-neon-red)', borderRadius: '50%', animation: 'spin 20s linear infinite' }}></div>
+                        <div style={{ position: 'absolute', fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--color-neon-red)' }}>
+                            SEC_ZONE_9 <br />
+                            ACTIVE_SCN
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* TITAN GRAPHICS / PROJECTS SECTION */}
-            <section className="section" style={{ position: 'relative' }}>
-                {/* Titan blueprint graphic placeholder */}
-                <svg className="blueprint-graphic" style={{ top: '-100px', left: '-50px', width: '400px', height: '400px' }} viewBox="0 0 200 200">
-                    <circle cx="100" cy="100" r="80" stroke="white" fill="none" strokeWidth="0.5" strokeDasharray="4 4" />
-                    <rect x="60" y="60" width="80" height="80" stroke="white" fill="none" strokeWidth="0.5" />
-                    <line x1="20" y1="20" x2="180" y2="180" stroke="white" strokeWidth="0.2" />
-                    <line x1="180" y1="20" x2="20" y2="180" stroke="white" strokeWidth="0.2" />
-                </svg>
-
+            {/* FEATURED PROJECTS: THE WAR ROOM INDEX */}
+            <section style={{ padding: '120px 0', background: 'rgba(255, 0, 0, 0.02)' }}>
                 <div className="container">
-                    <div style={{ marginBottom: '80px' }}>
-                        <div className="micro-label">Index // 001</div>
-                        <h2 style={{ fontSize: '48px', marginTop: '16px' }}>Featured Repositories</h2>
+                    <div style={{ marginBottom: '80px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                        <div>
+                            <div className="mono-label">REPOSITORIES // STACK_7</div>
+                            <h2 style={{ fontSize: '48px', marginTop: '16px' }}>Mission Output</h2>
+                        </div>
+                        <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textAlign: 'right' }}>
+                            TOTAL_NODES: 07 <br />
+                            STATUS: STABLE
+                        </div>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))', gap: '24px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px' }}>
                         {featuredProjects.map((project) => (
-                            <div key={project.id} className="glass-card">
+                            <div key={project.id} className="card-tactical">
                                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '24px' }}>
-                                    <span className="micro-label" style={{ color: 'var(--color-chartreuse-pulse)' }}>{project.category}</span>
-                                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--color-slate-300)' }}>{project.year}</span>
+                                    <span className="mono-label">{project.category}</span>
+                                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', opacity: 0.5 }}>#{project.id}</span>
                                 </div>
                                 <h3 style={{ fontSize: '28px', marginBottom: '16px', color: 'white' }}>{project.title}</h3>
-                                <p style={{ color: 'var(--color-slate-200)', fontSize: '15px', lineHeight: '1.6', marginBottom: '32px' }}>
+                                <p style={{ color: 'var(--color-ash)', opacity: 0.6, fontSize: '15px', marginBottom: '32px', height: '80px', overflow: 'hidden' }}>
                                     {project.description}
                                 </p>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
                                     {project.techStack.map(tech => (
-                                        <span key={tech} style={{ fontSize: '11px', background: 'rgba(255,255,255,0.05)', padding: '4px 10px', borderRadius: '4px', fontFamily: 'var(--font-mono)' }}>
+                                        <span key={tech} style={{ fontSize: '10px', color: 'var(--color-neon-red)', border: '1px solid rgba(255, 59, 59, 0.2)', padding: '2px 8px', borderRadius: '2px', fontFamily: 'var(--font-mono)' }}>
                                             {tech}
                                         </span>
                                     ))}
                                 </div>
-                                <a href={project.githubUrl} target="_blank" rel="noreferrer" className="btn-raycast" style={{ width: '100%', justifyContent: 'center', background: 'rgba(255,255,255,0.05)', color: 'white' }}>
-                                    Inspect Code
+                                <a href={project.githubUrl} target="_blank" rel="noreferrer" className="btn-primary-red" style={{ width: '100%', justifyContent: 'center', fontSize: '11px', padding: '10px' }}>
+                                    INSPECT_CORE
                                 </a>
                             </div>
                         ))}
@@ -77,35 +82,37 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* TECHNICAL SPECS (TITAN STYLE) */}
-            <section className="section" style={{ borderTop: '1px solid var(--color-graphite-600)' }}>
+            {/* TECHNICAL SPECS: THE TERMINAL */}
+            <section style={{ padding: '120px 0' }}>
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
-                        <div className="glass-card" style={{ padding: '48px', borderStyle: 'dashed' }}>
-                            <div className="micro-label" style={{ marginBottom: '24px' }}>Status_Terminal</div>
-                            <div style={{ fontFamily: 'var(--font-mono)', color: 'var(--color-chartreuse-pulse)', fontSize: '14px', lineHeight: '1.8' }}>
-                                [OK] Research_Core initialized <br />
-                                [OK] VLSI_Blueprint_048 loaded <br />
-                                [OK] Neural_Net_Sync complete <br />
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
+                        <div style={{ background: '#050505', padding: '48px', border: '1px solid #111' }}>
+                            <div className="mono-label" style={{ marginBottom: '24px' }}>TERMINAL_OUTPUT</div>
+                            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', lineHeight: '1.8', color: '#555' }}>
+                                {`> systemctl start research_core`} <br />
+                                {`> fetching kl_connect telemetry... OK`} <br />
+                                {`> analyzing hybrid_pso_sa_algorithm...`} <br />
+                                <span style={{ color: 'var(--color-neon-red)' }}>{`> optimal_found: true`}</span> <br />
+                                {`> status: mission_ready`} <br />
                                 <br />
-                                <span style={{ color: 'white' }}>$ portfolio --deploy --mode obsidian</span> <br />
-                                <span style={{ color: 'var(--color-slate-300)' }}>Deploying to: Yash1026-hash.void</span>
+                                <span style={{ color: 'white' }}>$ portfolio --info --all</span>
                             </div>
                         </div>
                         <div>
-                            <h2 style={{ fontSize: '40px', marginBottom: '24px' }}>Technical <br /> Competencies</h2>
-                            <p className="text-muted" style={{ marginBottom: '32px' }}>
-                                Specialized in high-performance computing, quantum simulators, 
-                                and autonomous systems optimization.
+                            <h2 style={{ fontSize: '40px', marginBottom: '32px' }}>Operational <br /> Capabilities</h2>
+                            <p style={{ color: 'var(--color-ash)', opacity: 0.6, marginBottom: '40px' }}>
+                                Bridging the gap between high-level AI orchestration and 
+                                low-level VLSI circuit optimization. Mission-ready for 
+                                complex research and deployment.
                             </p>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
                                 <div>
-                                    <div className="micro-label">Focus</div>
-                                    <div style={{ fontWeight: 600 }}>Quantum / AI / VLSI</div>
+                                    <div className="mono-label">Core_Sectors</div>
+                                    <div style={{ fontSize: '18px', fontWeight: 600 }}>AI / Quantum / VLSI</div>
                                 </div>
                                 <div>
-                                    <div className="micro-label">Status</div>
-                                    <div style={{ color: '#59d499', fontWeight: 600 }}>● Active</div>
+                                    <div className="mono-label">Deployment</div>
+                                    <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-neon-red)' }}>Active_Ready</div>
                                 </div>
                             </div>
                         </div>
@@ -114,6 +121,13 @@ export default function Home() {
             </section>
 
             <Footer />
+
+            <style>{`
+                @keyframes spin {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+            `}</style>
         </main>
     )
 }

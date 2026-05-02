@@ -1,7 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { videos, videoCategories } from '../data/videos';
-import VideoDetailCard from '../components/VideoDetailCard';
 import Footer from '../components/Footer';
 
 export default function Videos() {
@@ -12,56 +10,59 @@ export default function Videos() {
         : videos.filter(v => v.category === activeCategory);
 
     return (
-        <div className="videos-page">
-            {/* Page Header */}
-            <div className="page-header">
-                <Link to="/" className="back-link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M19 12H5M12 19l-7-7 7-7" />
-                    </svg>
-                    <span>Back</span>
-                </Link>
-
-                <div className="page-title-section">
-                    <h1 className="page-title">Videos</h1>
+        <div className="videos-page" style={{ paddingTop: '160px' }}>
+            <div className="container">
+                <div style={{ marginBottom: '80px' }}>
+                    <div className="mono-label">[ VISUAL_STREAM_ACTIVE ]</div>
+                    <h1 style={{ fontSize: '72px', margin: '16px 0', fontWeight: 200 }}>MEDIA_INTEL</h1>
+                    <p style={{ color: 'var(--color-ash)', opacity: 0.6, fontSize: '18px', maxWidth: '600px', fontFamily: 'var(--font-mono)' }}>
+                        Visual documentation of technical events, creative projects, and campus engagement.
+                    </p>
                 </div>
 
-                <p className="page-description">
-                    Tutorials, project demos, and educational content on AI, quantum computing, and web development.
-                </p>
-            </div>
-
-            {/* Category Filter */}
-            <div className="category-filter">
-                {videoCategories.map((category) => (
-                    <button
-                        key={category}
-                        className={`category-tab ${activeCategory === category ? 'active' : ''}`}
-                        onClick={() => setActiveCategory(category)}
-                    >
-                        <span className="category-label">{category}</span>
-                    </button>
-                ))}
-            </div>
-
-            {/* Videos Grid */}
-            <div className="videos-grid">
-                {filteredVideos.map((video) => (
-                    <VideoDetailCard key={video.id} video={video} />
-                ))}
-            </div>
-
-            {/* Empty State */}
-            {filteredVideos.length === 0 && (
-                <div className="empty-state">
-                    <p>No videos found in this category.</p>
+                {/* Category Filter */}
+                <div style={{ display: 'flex', gap: '8px', marginBottom: '64px' }}>
+                    {videoCategories.map((category) => (
+                        <button
+                            key={category}
+                            onClick={() => setActiveCategory(category)}
+                            className={`nav-link-red ${activeCategory === category ? 'active' : ''}`}
+                            style={{ 
+                                background: activeCategory === category ? 'rgba(255, 59, 59, 0.1)' : 'transparent',
+                                border: '1px solid rgba(255, 59, 59, 0.2)',
+                                padding: '8px 24px',
+                                borderRadius: '2px',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            {category}
+                        </button>
+                    ))}
                 </div>
-            )}
 
-            {/* Footer */}
-            <div className="videos-footer">
-                <Footer />
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '32px' }}>
+                    {filteredVideos.map((video) => (
+                        <div key={video.id} className="card-tactical">
+                            <div style={{ position: 'relative', marginBottom: '24px', aspectRatio: '16/9', background: '#050505', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #222' }}>
+                                <div className="mono-label" style={{ opacity: 0.3 }}>MEDIA_PLACEHOLDER</div>
+                                <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'var(--color-neon-red)', color: 'white', padding: '4px 8px', fontSize: '10px', fontFamily: 'var(--font-mono)' }}>{video.platform.toUpperCase()}</div>
+                            </div>
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
+                                <span className="mono-label">{video.category}</span>
+                                <span className="mono-label" style={{ color: '#555' }}>ID_{video.id}</span>
+                            </div>
+                            <h3 style={{ fontSize: '24px', marginBottom: '12px', color: 'white' }}>{video.title}</h3>
+                            <p style={{ color: 'var(--color-ash)', opacity: 0.6, fontSize: '14px', marginBottom: '24px', lineHeight: '1.6' }}>
+                                {video.description}
+                            </p>
+                            <a href={video.videoUrl} target="_blank" rel="noreferrer" className="btn-primary-red" style={{ width: '100%', justifyContent: 'center', fontSize: '11px' }}>
+                                EXECUTE_PLAYBACK
+                            </a>
+                        </div>
+                    ))}
+                </div>
             </div>
+            <Footer />
         </div>
     );
 }
