@@ -11,13 +11,13 @@ const PixelTransition = ({ children }) => {
         animate: { 
             opacity: 1,
             transition: {
-                staggerChildren: 0.01,
+                staggerChildren: 0.005,
             }
         },
         exit: { 
             opacity: 1,
             transition: {
-                staggerChildren: 0.01,
+                staggerChildren: 0.005,
                 staggerDirection: -1
             }
         }
@@ -29,7 +29,7 @@ const PixelTransition = ({ children }) => {
             scale: 0, 
             opacity: 0,
             transition: {
-                duration: 0.4,
+                duration: 0.2,
                 ease: [0.23, 1, 0.32, 1]
             }
         },
@@ -37,7 +37,7 @@ const PixelTransition = ({ children }) => {
             scale: 1, 
             opacity: 1,
             transition: {
-                duration: 0.4,
+                duration: 0.2,
                 ease: [0.23, 1, 0.32, 1]
             }
         }

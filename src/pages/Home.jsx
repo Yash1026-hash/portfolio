@@ -29,30 +29,42 @@ export default function Home() {
             {/* HERO SECTION: MISSION BRIEFING */}
             <section style={{ height: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
                 <div className="container">
-                    <div style={{ maxWidth: '800px' }}>
+                    <motion.div 
+                        style={{ maxWidth: '800px' }}
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
                         <div className="mono-label" style={{ marginBottom: '16px' }}>[ INITIALIZING_NEURAL_CORE... OK ]</div>
                         <h1 style={{ fontSize: 'clamp(48px, 12vw, 120px)', lineHeight: '0.9', fontWeight: 200, marginBottom: '24px' }}>
                             YASHWANTH_ <br />
-                            <span style={{ color: 'var(--color-neon-red)' }}>ENGINEER_</span>
+                            <span style={{ color: 'var(--color-neon-red)' }}>CREATOR_</span>
                         </h1>
                         <p style={{ fontSize: '20px', color: 'var(--color-ash)', opacity: 0.7, marginBottom: '48px', maxWidth: '600px', fontFamily: 'var(--font-mono)' }}>
-                            High-precision technical architecture for 
-                            observability, quantum research, and AI infrastructure.
+                            I write code, shoot & edit videos, and read extensively. Constantly pushing boundaries to learn more and build better. A hybrid of technical precision and creative output.
                         </p>
-                        <div style={{ display: 'flex', gap: '24px' }}>
+                        <motion.div 
+                            style={{ display: 'flex', gap: '24px' }}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.4, duration: 0.8 }}
+                        >
                             <Link to="/contact" className="btn-primary-red">
                                 INITIATE_CONTACT
                             </Link>
                             <Link to="/projects" style={{ color: 'white', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '13px', display: 'flex', alignItems: 'center' }}>
                                 VIEW_REPOSITORIES
                             </Link>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
 
                 {/* Tactical HUD Element (Right) */}
                 <motion.div 
-                    style={{ position: 'absolute', right: '5%', top: '50%', transform: 'translateY(-50%)', opacity: 0.3, x, y }}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 0.3, scale: 1 }}
+                    transition={{ delay: 0.6, duration: 1.5, ease: "easeOut" }}
+                    style={{ position: 'absolute', right: '5%', top: '50%', transform: 'translateY(-50%)', x, y }}
                 >
                     <div style={{ width: '400px', height: '400px', border: '1px solid var(--color-neon-red)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <div style={{ width: '300px', height: '300px', border: '1px dashed var(--color-neon-red)', borderRadius: '50%', animation: 'spin 20s linear infinite' }}></div>
