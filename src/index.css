@@ -146,15 +146,19 @@ h1, h2, h3 {
 }
 
 .nav-link-red {
-  color: var(--color-slate-gray);
+  color: var(--text-secondary);
   text-decoration: none;
   font-family: var(--font-mono);
   font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 4px;
   transition: all 0.2s ease;
 }
 
 .nav-link-red:hover, .nav-link-red.active {
-  color: var(--color-neon-red);
+  color: var(--accent-secondary);
+  background: var(--bg-tertiary);
+  font-weight: 600;
 }
 
 /* Tactical Cards */

@@ -17,7 +17,7 @@ export default function Navbar() {
         <nav className="navbar-war-room">
             <div className="container">
                 <div className="nav-container">
-                    <Link to="/" style={{ color: 'var(--color-neon-red)', textDecoration: 'none', fontWeight: 800, fontSize: '20px', letterSpacing: '4px' }}>
+                    <Link to="/" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontWeight: 800, fontSize: '20px', letterSpacing: '4px' }}>
                         YASH_
                     </Link>
 
@@ -27,12 +27,6 @@ export default function Navbar() {
                                 key={link.path}
                                 to={link.path}
                                 className={`nav-link-red ${location.pathname === link.path ? 'active' : ''}`}
-                                style={{
-                                    color: location.pathname === link.path ? 'var(--color-neon-red)' : '#ffffff',
-                                    opacity: location.pathname === link.path ? 1 : 0.7,
-                                    textShadow: location.pathname === link.path ? '0 0 10px rgba(255,59,59,0.5)' : 'none',
-                                    fontWeight: location.pathname === link.path ? 600 : 400
-                                }}
                             >
                                 {link.label}
                             </Link>
