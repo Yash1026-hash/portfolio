@@ -3,25 +3,20 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap');
 
 :root {
-  /* --- DARK THEME (Raycast + Antimetal) --- */
+  /* --- CORE PALETTE (Raycast Obsidian) --- */
   --color-void-black: #040506;
   --color-deep-charcoal: #07080a;
   --color-graphite-700: #111214;
   --color-graphite-600: #1b1c1e;
-  --color-chartreuse-pulse: #d0f100; /* Antimetal Primary */
-  --color-ash-50: #e6e6e6; /* Raycast Primary Button */
-  --color-snow: #ffffff;
-  --color-ember-red: #ff6363;
+  --color-graphite-500: #363739;
   
-  /* --- LIGHT THEME (Titan) --- */
-  --color-canvas-white: #ffffff;
-  --color-off-white-sage: #f3efeb;
-  --color-faded-stone: #e9eaeb;
-  --color-midnight-ink: #111111;
-  --color-gunmetal-gray: #615e5b;
-  --color-soft-concrete: #d8d3cc;
-  --color-highlight-orange: #ff9900;
-
+  /* --- ACCENTS (Antimetal + Raycast) --- */
+  --color-chartreuse-pulse: #d0f100;
+  --color-ember-red: #ff6363;
+  --color-snow: #ffffff;
+  --color-slate-300: #6a6b6c;
+  --color-slate-200: #9c9c9d;
+  
   /* --- TYPOGRAPHY --- */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Fraunces', serif;
@@ -29,22 +24,20 @@
 
   /* --- SPACING & RADIUS --- */
   --spacing-unit: 8px;
-  --radius-cards: 20px; /* Titan/Raycast hybrid */
+  --radius-cards: 16px;
   --radius-pill: 9999px;
-  --radius-buttons: 160px; /* Titan */
-  --radius-badges: 6px; /* Raycast */
+  --radius-buttons: 8px; /* Raycast style buttons */
 
-  /* --- SHADOWS (The Tactile Bevel - Raycast) --- */
+  /* --- SHADOWS (Tactile Raycast) --- */
   --shadow-keyboard: rgba(0, 0, 0, 0.4) 0px 1.5px 0.5px 2.5px, 
                      rgb(0, 0, 0) 0px 0px 0.5px 1px, 
                      rgba(0, 0, 0, 0.25) 0px 2px 1px 1px inset, 
-                     rgba(255, 255, 255, 0.2) 0px 1px 1px 1px inset;
-  
-  --shadow-elevation-blue: rgba(0, 39, 80, 0.03) 0px 56px 72px -16px, 
-                           rgba(0, 39, 80, 0.04) 0px 0px 0px 1px;
+                     rgba(255, 255, 255, 0.15) 0px 1px 1px 1px inset;
 
+  --shadow-glass: rgba(0, 0, 0, 0.28) 0px 1.189px 2.377px 0px;
+  
   /* --- ATMOSPHERE --- */
-  --gradient-nebula: radial-gradient(84.6% 73.49% at 50% 26.51%, rgba(4, 63, 150, 0.4), rgba(6, 18, 37, 0.1));
+  --gradient-nebula: radial-gradient(84.6% 73.49% at 50% 26.51%, rgba(4, 63, 150, 0.3), rgba(6, 18, 37, 0.05));
 }
 
 * {
@@ -62,25 +55,50 @@ body {
   overflow-x: hidden;
 }
 
-/* --- TYPOGRAPHY SYSTEM --- */
+/* --- ANTIMETAL CENTRAL PATTERN --- */
+.antimetal-grid {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(var(--color-chartreuse-pulse) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hex-pattern {
+  position: fixed;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 120px 104px;
+}
+
+/* --- TYPOGRAPHY --- */
 h1, h2, h3 {
   font-family: var(--font-serif);
   font-weight: 400;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  letter-spacing: -0.01em;
   font-feature-settings: "ss04", "ss06", "ss09", "ss10", "ss11";
 }
 
-.heading-sans {
+.heading-display {
   font-family: var(--font-sans);
   font-weight: 600;
-  letter-spacing: -0.05em; /* Raycast Negative Tracking */
+  letter-spacing: -0.11em; /* Raycast Compressed */
+  line-height: 1.0;
 }
 
 .micro-label {
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.1em; /* Raycast Positive Tracking */
+  letter-spacing: 0.08em;
   font-weight: 500;
   color: var(--color-slate-300);
 }
@@ -90,92 +108,28 @@ h1, h2, h3 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px;
+  position: relative;
+  z-index: 1;
 }
 
 .section {
   padding: 120px 0;
-  position: relative;
 }
 
 /* --- COMPONENTS --- */
 
-/* The Obsidian Hero */
-.hero-obsidian {
-  background-color: var(--color-void-black);
-  background-image: var(--gradient-nebula);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 24px;
-}
-
-/* Tactile Buttons (Raycast + Titan) */
-.btn-obsidian {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 15px;
-  padding: 12px 32px;
-  border-radius: var(--radius-buttons);
-  border: none;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: var(--shadow-keyboard);
-  text-decoration: none;
-}
-
-.btn-obsidian:active {
-  transform: scale(0.98) translateY(1px);
-  box-shadow: none;
-}
-
-.btn-chartreuse {
-  background-color: var(--color-chartreuse-pulse);
-  color: var(--color-midnight-ink);
-}
-
-.btn-ghost-dark {
-  background: transparent;
-  color: var(--color-snow);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Titan Feature Card */
-.card-ledger {
-  background-color: var(--color-off-white-sage);
-  color: var(--color-midnight-ink);
-  border-radius: 32px;
-  padding: 40px;
-  border: 1px solid var(--color-soft-concrete);
-  transition: transform 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.card-ledger:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-elevation-blue);
-}
-
-/* --- NAVIGATION (Raycast Pill Style) --- */
+/* Raycast Pill Navbar */
 .navbar {
   position: fixed;
   top: 32px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  width: auto;
 }
 
 .navbar-content {
-  background: var(--color-graphite-600);
-  backdrop-filter: blur(20px);
+  background: rgba(27, 28, 30, 0.8);
+  backdrop-filter: blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-pill);
   padding: 8px 12px;
@@ -189,7 +143,6 @@ h1, h2, h3 {
   color: var(--color-slate-200);
   text-decoration: none;
   font-size: 13px;
-  font-weight: 500;
   padding: 6px 16px;
   border-radius: var(--radius-pill);
   transition: all 0.2s ease;
@@ -200,64 +153,68 @@ h1, h2, h3 {
   background: rgba(255, 255, 255, 0.05);
 }
 
-.navbar-logo {
-  background: var(--color-chartreuse-pulse);
-  color: var(--color-midnight-ink);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  margin-right: 8px;
-}
-
-/* Raycast Glass Panel */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.03);
+/* Glass Card (Raycast + Titan Graphics) */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
   backdrop-filter: blur(40px);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-radius: var(--radius-cards);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 32px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: var(--shadow-glass);
 }
 
-/* --- UTILITIES --- */
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-4px);
+}
+
+/* Buttons */
+.btn-raycast {
+  background: var(--color-snow);
+  color: var(--color-void-black);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-raycast:hover {
+  background: var(--color-chartreuse-pulse);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-slate-200);
+  border: 1px solid var(--color-graphite-500);
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-snow);
+  color: var(--color-snow);
+}
+
+/* Titan Graphics (Line Art) */
+.blueprint-graphic {
+  position: absolute;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+/* Noise Overlay */
 .noise-overlay {
   position: fixed;
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.015;
+  opacity: 0.02;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
-
-.transition-light {
-  background-color: var(--color-canvas-white);
-  color: var(--color-midnight-ink);
-}
-
-.text-chartreuse { color: var(--color-chartreuse-pulse); }
-.text-muted { color: var(--color-gunmetal-gray); opacity: 0.8; }
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-}
-
-/* Utilities */
-.text-orange { color: var(--color-highlight-orange); }
