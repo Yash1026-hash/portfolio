@@ -37,9 +37,9 @@ export default function About() {
                         <img src="/backup/profile_zen.jpg" alt="Profile" style={{ width: '100%', filter: 'grayscale(1) contrast(1.2)' }} />
                         <div style={{ position: 'absolute', inset: 0, border: '1px solid var(--color-neon-red)', opacity: 0.3 }}></div>
                     </div>
-                    <div>
+                    <div style={{ minWidth: 0 }}>
                         <div className="mono-label">IDENTITY_RECORD // SEC_01</div>
-                        <h1 style={{ fontSize: '64px', margin: '16px 0 32px', fontWeight: 200 }}>K_YASHWANTH_CHOWDHARY_</h1>
+                        <h1 style={{ fontSize: 'clamp(32px, 5vw, 56px)', margin: '16px 0 32px', fontWeight: 200, wordBreak: 'break-word', overflowWrap: 'anywhere' }}>K_YASHWANTH_CHOWDHARY_</h1>
                         <p style={{ fontSize: '18px', color: 'var(--color-ash)', opacity: 0.7, lineHeight: '1.8' }}>
                             Electronics and Communication Engineering student specialized in VLSI. 
                             Research focus in AI-driven automation, autonomous systems, and 

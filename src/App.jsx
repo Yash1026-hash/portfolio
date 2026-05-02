@@ -7,8 +7,12 @@ import Videos from './pages/Videos'
 import Achievements from './pages/Achievements'
 import About from './pages/About'
 import Contact from './pages/Contact'
+import { AnimatePresence } from 'framer-motion'
+import PixelTransition from './components/PixelTransition'
 
 function App() {
+    const location = useLocation()
+
     return (
         <div className="crimson-intelligence">
             {/* HUD OVERLAYS */}
@@ -24,14 +28,16 @@ function App() {
             <Navbar />
 
             <div className="main-viewport" style={{ position: 'relative', zIndex: 10 }}>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/videos" element={<Videos />} />
-                    <Route path="/achievements" element={<Achievements />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                </Routes>
+                <AnimatePresence mode="wait">
+                    <Routes location={location} key={location.pathname}>
+                        <Route path="/" element={<PixelTransition><Home /></PixelTransition>} />
+                        <Route path="/projects" element={<PixelTransition><Projects /></PixelTransition>} />
+                        <Route path="/videos" element={<PixelTransition><Videos /></PixelTransition>} />
+                        <Route path="/achievements" element={<PixelTransition><Achievements /></PixelTransition>} />
+                        <Route path="/about" element={<PixelTransition><About /></PixelTransition>} />
+                        <Route path="/contact" element={<PixelTransition><Contact /></PixelTransition>} />
+                    </Routes>
+                </AnimatePresence>
             </div>
 
             {/* Corner Markers */}

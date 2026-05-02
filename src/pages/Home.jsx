@@ -1,8 +1,29 @@
 import { Link } from 'react-router-dom'
 import { featuredProjects } from '../data/projects'
 import Footer from '../components/Footer'
+import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { useEffect } from 'react'
 
 export default function Home() {
+    const mouseX = useMotionValue(0)
+    const mouseY = useMotionValue(0)
+    const springConfig = { damping: 25, stiffness: 100 }
+    const x = useSpring(mouseX, springConfig)
+    const y = useSpring(mouseY, springConfig)
+
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            const { innerWidth, innerHeight } = window
+            // Calculate distance from center (-1 to 1)
+            const xVal = (e.clientX / innerWidth - 0.5) * 60
+            const yVal = (e.clientY / innerHeight - 0.5) * 60
+            mouseX.set(xVal)
+            mouseY.set(yVal)
+        }
+        window.addEventListener('mousemove', handleMouseMove)
+        return () => window.removeEventListener('mousemove', handleMouseMove)
+    }, [mouseX, mouseY])
+
     return (
         <main style={{ minHeight: '100vh' }}>
             {/* HERO SECTION: MISSION BRIEFING */}
@@ -11,26 +32,28 @@ export default function Home() {
                     <div style={{ maxWidth: '800px' }}>
                         <div className="mono-label" style={{ marginBottom: '16px' }}>[ INITIALIZING_NEURAL_CORE... OK ]</div>
                         <h1 style={{ fontSize: 'clamp(48px, 12vw, 120px)', lineHeight: '0.9', fontWeight: 200, marginBottom: '24px' }}>
-                            CRIMSON <br />
-                            <span style={{ color: 'var(--color-neon-red)' }}>INTELLIGENCE_</span>
+                            YASHWANTH_ <br />
+                            <span style={{ color: 'var(--color-neon-red)' }}>ENGINEER_</span>
                         </h1>
                         <p style={{ fontSize: '20px', color: 'var(--color-ash)', opacity: 0.7, marginBottom: '48px', maxWidth: '600px', fontFamily: 'var(--font-mono)' }}>
                             High-precision technical architecture for 
                             observability, quantum research, and AI infrastructure.
                         </p>
                         <div style={{ display: 'flex', gap: '24px' }}>
-                            <Link to="/projects" className="btn-primary-red">
-                                ACCESS_REPOSITORIES
+                            <Link to="/contact" className="btn-primary-red">
+                                INITIATE_CONTACT
                             </Link>
-                            <a href="https://github.com/Yash1026-hash" target="_blank" rel="noreferrer" style={{ color: 'white', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '13px', display: 'flex', alignItems: 'center' }}>
-                                VIEW_SOURCE_CONTROL
-                            </a>
+                            <Link to="/projects" style={{ color: 'white', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '13px', display: 'flex', alignItems: 'center' }}>
+                                VIEW_REPOSITORIES
+                            </Link>
                         </div>
                     </div>
                 </div>
 
                 {/* Tactical HUD Element (Right) */}
-                <div style={{ position: 'absolute', right: '5%', top: '50%', transform: 'translateY(-50%)', opacity: 0.3 }}>
+                <motion.div 
+                    style={{ position: 'absolute', right: '5%', top: '50%', transform: 'translateY(-50%)', opacity: 0.3, x, y }}
+                >
                     <div style={{ width: '400px', height: '400px', border: '1px solid var(--color-neon-red)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <div style={{ width: '300px', height: '300px', border: '1px dashed var(--color-neon-red)', borderRadius: '50%', animation: 'spin 20s linear infinite' }}></div>
                         <div style={{ position: 'absolute', fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--color-neon-red)' }}>
@@ -38,7 +61,7 @@ export default function Home() {
                             ACTIVE_SCN
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </section>
 
             {/* FEATURED PROJECTS: THE WAR ROOM INDEX */}
