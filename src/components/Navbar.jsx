@@ -21,7 +21,7 @@ export default function Navbar() {
                         YASH_
                     </Link>
 
-                    <div style={{ display: 'flex', gap: '32px' }}>
+                    <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
                         {navLinks.map((link) => (
                             <Link
                                 key={link.path}

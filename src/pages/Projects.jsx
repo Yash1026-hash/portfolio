@@ -21,7 +21,7 @@ export default function Projects() {
                 </div>
 
                 {/* Filter */}
-                <div style={{ display: 'flex', gap: '8px', marginBottom: '64px' }}>
+                <div className="flex-mobile-wrap" style={{ display: 'flex', gap: '8px', marginBottom: '64px' }}>
                     {categories.map((category) => (
                         <button
                             key={category}
@@ -42,8 +42,8 @@ export default function Projects() {
 
                 <div style={{ display: 'grid', gap: '2px', background: 'var(--bg-tertiary)' }}>
                     {filteredProjects.map((project) => (
-                        <div key={project.id} className="card-tactical" style={{ border: 'none', display: 'grid', gridTemplateColumns: '80px 1fr 300px 150px', alignItems: 'center' }}>
-                            <div style={{ fontFamily: 'var(--font-mono)', opacity: 0.3, fontSize: '14px' }}>0{project.id}</div>
+                        <div key={project.id} className="card-tactical project-list-grid" style={{ border: 'none', display: 'grid', gridTemplateColumns: '80px 1fr 300px 150px', alignItems: 'center' }}>
+                            <div className="hide-mobile" style={{ fontFamily: 'var(--font-mono)', opacity: 0.3, fontSize: '14px' }}>0{project.id}</div>
                             <div>
                                 <h3 style={{ fontSize: '24px', color: 'var(--text-primary)' }}>{project.title}</h3>
                                 <div style={{ display: 'flex', gap: '16px', marginTop: '4px' }}>
@@ -51,7 +51,7 @@ export default function Projects() {
                                     <span className="mono-label" style={{ fontSize: '10px', color: '#555' }}>{project.year}</span>
                                 </div>
                             </div>
-                            <div style={{ color: 'var(--color-ash)', opacity: 0.5, fontSize: '14px', paddingRight: '40px' }}>
+                            <div className="hide-mobile" style={{ color: 'var(--color-ash)', opacity: 0.5, fontSize: '14px', paddingRight: '40px' }}>
                                 {project.description.substring(0, 100)}...
                             </div>
                             <a href={project.githubUrl} target="_blank" rel="noreferrer" className="btn-primary-red" style={{ fontSize: '11px', padding: '8px', justifyContent: 'center' }}>

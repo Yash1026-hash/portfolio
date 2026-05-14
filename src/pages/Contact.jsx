@@ -12,7 +12,7 @@ export default function Contact() {
                             Secure channel for research collaborations and technical inquiries.
                         </p>
                         
-                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+                        <div className="grid-2-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
                             <a href="mailto:yashwanthchowdhary83@gmail.com" className="btn-primary-red" style={{ justifyContent: 'center', padding: '16px' }}>
                                 OPEN_MAIL_CLIENT
                             </a>
@@ -21,7 +21,7 @@ export default function Contact() {
                             </a>
                         </div>
 
-                        <div style={{ marginTop: '80px', display: 'flex', justifyContent: 'center', gap: '64px', borderTop: 'var(--hud-border)', paddingTop: '40px' }}>
+                        <div className="flex-mobile-wrap" style={{ marginTop: '80px', display: 'flex', justifyContent: 'center', gap: '64px', borderTop: 'var(--hud-border)', paddingTop: '40px' }}>
                             <div style={{ textAlign: 'left' }}>
                                 <div className="mono-label">COORDINATES</div>
                                 <div style={{ fontSize: '14px', fontWeight: 600 }}>INDIA // IST (UTC+5:30)</div>

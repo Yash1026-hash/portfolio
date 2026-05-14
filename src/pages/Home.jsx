@@ -65,6 +65,7 @@ export default function Home() {
                     animate={{ opacity: 0.3, scale: 1 }}
                     transition={{ delay: 0.6, duration: 1.5, ease: "easeOut" }}
                     style={{ position: 'absolute', right: '5%', top: '50%', transform: 'translateY(-50%)', x, y }}
+                    className="hide-mobile"
                 >
                     <div style={{ width: '400px', height: '400px', border: 'var(--hud-border)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <div style={{ width: '300px', height: '300px', border: 'var(--hud-border)', borderStyle: 'dashed', borderRadius: '50%', animation: 'spin 20s linear infinite' }}></div>
@@ -90,7 +91,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '32px' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 350px), 1fr))', gap: '32px' }}>
                         {featuredProjects.map((project) => (
                             <div key={project.id} className="card-tactical">
                                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '24px' }}>
@@ -118,9 +119,9 @@ export default function Home() {
             </section>
 
             {/* TECHNICAL SPECS: THE TERMINAL */}
-            <section style={{ padding: '120px 0' }}>
+            <section style={{ padding: '120px 0' }} className="mobile-padding-reduce">
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
+                    <div className="grid-2-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
                         <div style={{ background: 'var(--bg-secondary)', padding: '48px', border: 'var(--hud-border)' }}>
                             <div className="mono-label" style={{ marginBottom: '24px' }}>TERMINAL_OUTPUT</div>
                             <div style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', lineHeight: '1.8', color: '#555' }}>

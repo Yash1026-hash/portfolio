@@ -32,9 +32,9 @@ export default function About() {
     return (
         <div className="about-page" style={{ paddingTop: '160px' }}>
             <div className="container">
-                <section className="card-tactical" style={{ marginBottom: '80px', display: 'grid', gridTemplateColumns: '300px 1fr', gap: '64px', alignItems: 'center' }}>
+                <section className="card-tactical about-hero-grid" style={{ marginBottom: '80px', display: 'grid', gridTemplateColumns: '300px 1fr', gap: '64px', alignItems: 'center' }}>
                     <div style={{ position: 'relative' }}>
-                        <img src="/backup/profile_zen.jpg" alt="Profile" style={{ width: '100%', filter: 'grayscale(1) contrast(1.2)' }} />
+                        <img src="/PPF.jpeg?v=2" alt="Profile" style={{ width: '100%', filter: 'grayscale(1) contrast(1.2)' }} />
                         <div style={{ position: 'absolute', inset: 0, border: 'var(--hud-border)', opacity: 0.3 }}></div>
                     </div>
                     <div style={{ minWidth: 0 }}>
@@ -48,7 +48,7 @@ export default function About() {
                     </div>
                 </section>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
+                <div className="grid-2-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px' }}>
                     <section className="card-tactical">
                         <div className="mono-label" style={{ marginBottom: '32px' }}>ACADEMIC_HISTORY</div>
                         {education.map((edu, i) => (

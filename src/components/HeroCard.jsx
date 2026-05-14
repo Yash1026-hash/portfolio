@@ -52,7 +52,7 @@ export default function HeroCard() {
                 {/* Profile Section */}
                 <div style={{ display: 'flex', alignItems: 'center', gap: '20px', margin: '24px 0' }}>
                     <img
-                        src="/backup/profile_zen.jpg"
+                        src="/PPF.jpeg?v=2"
                         alt="Profile"
                         style={{
                             width: '100px',

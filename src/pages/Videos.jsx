@@ -21,7 +21,7 @@ export default function Videos() {
                 </div>
 
                 {/* Category Filter */}
-                <div style={{ display: 'flex', gap: '8px', marginBottom: '64px' }}>
+                <div className="flex-mobile-wrap" style={{ display: 'flex', gap: '8px', marginBottom: '64px' }}>
                     {videoCategories.map((category) => (
                         <button
                             key={category}
@@ -40,7 +40,7 @@ export default function Videos() {
                     ))}
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '32px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 350px), 1fr))', gap: '32px' }}>
                     {filteredVideos.map((video) => (
                         <div key={video.id} className="card-tactical">
                             <div style={{ position: 'relative', marginBottom: '24px', aspectRatio: '16/9', background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'var(--hud-border)' }}>

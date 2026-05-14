@@ -10,7 +10,7 @@ export default function Achievements() {
                     <h1 style={{ fontSize: '72px', margin: '16px 0', fontWeight: 200 }}>MILESTONES_</h1>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gap: '32px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 350px), 1fr))', gap: '32px' }}>
                     {achievements.map((achievement) => (
                         <div key={achievement.id} className="card-tactical" style={{ borderLeft: achievement.highlight ? '4px solid var(--accent-secondary)' : 'var(--hud-border)' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '24px' }}>

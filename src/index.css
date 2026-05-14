@@ -236,3 +236,86 @@ h1, h2, h3 {
   margin: 0 auto;
   padding: 0 24px;
 }
+
+/* --- MOBILE RESPONSIVENESS OVERRIDES --- */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Typography Scaling */
+  h1 { font-size: clamp(36px, 10vw, 64px) !important; }
+  h2 { font-size: clamp(28px, 8vw, 48px) !important; }
+  h3 { font-size: clamp(20px, 6vw, 32px) !important; }
+
+  /* Utility Grid Layouts */
+  .grid-2-col {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .about-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+    text-align: center;
+  }
+  
+  .about-hero-grid > div:first-child {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+
+  .project-list-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 24px !important;
+  }
+
+  .project-list-grid .hide-mobile {
+    display: none !important;
+  }
+
+  /* Utility Flex Layouts */
+  .flex-mobile-wrap {
+    flex-wrap: wrap !important;
+  }
+
+  .mobile-stack {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+
+  /* Navbar Adjustments */
+  .nav-container {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .nav-container > div {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    justify-content: flex-start !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-link-red {
+    white-space: nowrap;
+    padding: 6px 8px;
+  }
+
+  /* General Spacing Reductions */
+  .mobile-padding-reduce {
+    padding: 60px 0 !important;
+  }
+
+  .mobile-margin-reduce {
+    margin-bottom: 40px !important;
+  }
+}
