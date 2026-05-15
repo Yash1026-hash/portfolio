@@ -27,7 +27,7 @@ function App() {
 
             <Navbar />
 
-            <div className="main-viewport" style={{ position: 'relative', zIndex: 10 }}>
+            <div className="main-viewport" style={{ position: 'relative', zIndex: 1 }}>
                 <AnimatePresence mode="wait">
                     <Routes location={location} key={location.pathname}>
                         <Route path="/" element={<PixelTransition><Home /></PixelTransition>} />
@@ -41,10 +41,10 @@ function App() {
             </div>
 
             {/* Corner Markers */}
-            <div style={{ position: 'fixed', top: '20px', left: '20px', color: 'var(--color-neon-red)', fontFamily: 'var(--font-mono)', fontSize: '10px', zIndex: 10000 }}>
+            <div style={{ position: 'fixed', top: '20px', left: '20px', color: 'var(--color-neon-red)', fontFamily: 'var(--font-mono)', fontSize: '10px', zIndex: 10000, opacity: 0.15, pointerEvents: 'none' }}>
                 TR-NITY // SYS_AUTH_01
             </div>
-            <div style={{ position: 'fixed', bottom: '20px', right: '20px', color: 'var(--color-neon-red)', fontFamily: 'var(--font-mono)', fontSize: '10px', zIndex: 10000 }}>
+            <div style={{ position: 'fixed', bottom: '20px', right: '20px', color: 'var(--color-neon-red)', fontFamily: 'var(--font-mono)', fontSize: '10px', zIndex: 10000, opacity: 0.15, pointerEvents: 'none' }}>
                 SEC_ZONE // LN_99
             </div>
         </div>

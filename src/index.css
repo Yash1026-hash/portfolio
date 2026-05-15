@@ -133,7 +133,7 @@ h1, h2, h3 {
   left: 0;
   width: 100%;
   padding: 24px;
-  z-index: 1000;
+  z-index: 10001;
   background: var(--nav-bg);
 }
 

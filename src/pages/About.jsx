@@ -7,7 +7,7 @@ export default function About() {
             institution: 'KL Deemed University',
             period: '2023 - 2027',
             grade: '8.29 CGPA',
-            highlights: ['Specialization in VLSI Design', 'Vice President - Aparmaya Club', 'Core Member - PULSE Broadcasting']
+            highlights: ['Specialization in VLSI Design', 'IEEE ComSoc Treasurer', 'Vice President - Aparmaya Club', 'Core Member - PULSE Broadcasting']
         },
         {
             degree: 'Diploma in Electronics and Communication Engineering',
@@ -24,9 +24,9 @@ export default function About() {
     ];
 
     const skills = {
-        'Programming': ['C', 'C++', 'Verilog HDL', 'Python'],
-        'AI & Vision': ['OpenCV', 'YOLO v8l', 'ResNet', 'Object Detection'],
-        'EDA Tools': ['Cadence', 'LTSpice', 'Vivado', 'MATLAB', 'EasyEDA', 'Multisim']
+        'Programming': ['C', 'C++', 'Verilog HDL', 'SystemVerilog', 'Python'],
+        'Verification & EDA': ['UVM', 'Cadence', 'LTSpice', 'Vivado', 'MATLAB', 'EasyEDA', 'Multisim'],
+        'AI & Vision': ['OpenCV', 'YOLO v8l', 'ResNet', 'Object Detection', 'PyTorch']
     };
 
     return (
@@ -41,9 +41,10 @@ export default function About() {
                         <div className="mono-label">IDENTITY_RECORD // SEC_01</div>
                         <h1 style={{ fontSize: 'clamp(24px, 4vw, 42px)', margin: '16px 0 32px', fontWeight: 200, wordBreak: 'break-word', overflowWrap: 'anywhere' }}>K_YASHWANTH_CHOWDHARY_</h1>
                         <p style={{ fontSize: '18px', color: 'var(--color-ash)', opacity: 0.7, lineHeight: '1.8' }}>
-                            Electronics and Communication Engineering student specialized in VLSI. 
-                            Research focus in AI-driven automation, autonomous systems, and 
-                            high-performance circuit design.
+                            B.Tech ECE (VLSI) undergraduate at KL Deemed University, graduating 2027. 
+                            IEEE Communications Society Treasurer. Research focus in Edge AI, 
+                            embedded autonomous systems, and high-performance VLSI circuit design. 
+                            2× hackathon finalist. Targeting MS abroad, Fall 2027.
                         </p>
                     </div>
                 </section>
@@ -59,6 +60,13 @@ export default function About() {
                                     <span className="mono-label" style={{ fontSize: '10px' }}>{edu.period}</span>
                                 </div>
                                 <div style={{ marginTop: '8px', color: 'var(--color-neon-red)', fontFamily: 'var(--font-mono)', fontSize: '12px' }}>{edu.grade}</div>
+                                {edu.highlights && (
+                                    <div style={{ marginTop: '8px', display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                                        {edu.highlights.map(h => (
+                                            <span key={h} style={{ fontSize: '10px', color: 'var(--text-secondary)', background: 'var(--bg-tertiary)', padding: '2px 8px', border: 'var(--hud-border)', fontFamily: 'var(--font-mono)' }}>{h}</span>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </section>

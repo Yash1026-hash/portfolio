@@ -50,7 +50,10 @@ export default function HeroCard() {
                 </div>
 
                 {/* Profile Section */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', margin: '24px 0' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap
+                    
+                    
+                    : '20px', margin: '24px 0' }}>
                     <img
                         src="/PPF.jpeg?v=2"
                         alt="Profile"
@@ -70,7 +73,7 @@ export default function HeroCard() {
                             ECE (VLSI) Undergraduate | AI & Embedded Systems
                         </p>
                         <p className="text-muted-text" style={{ fontSize: '12px', marginTop: '8px', lineHeight: 1.5, maxWidth: '280px' }}>
-                            I vibe code. Passionate about autonomous systems, quantum computing, and embedded solutions. 2x Hackathon Winner.
+                            Passionate about autonomous systems, VLSI design, and embedded solutions. 2× Hackathon Winner. IEEE ComSoc Treasurer.
                         </p>
                     </div>
                 </div>

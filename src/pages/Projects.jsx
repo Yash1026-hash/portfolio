@@ -9,6 +9,14 @@ export default function Projects() {
         ? projects
         : projects.filter(p => p.category === activeCategory);
 
+    // Smart truncation at word boundaries
+    const smartTruncate = (text, maxLen = 100) => {
+        if (text.length <= maxLen) return text;
+        const truncated = text.substring(0, maxLen);
+        const lastSpace = truncated.lastIndexOf(' ');
+        return truncated.substring(0, lastSpace) + '…';
+    };
+
     return (
         <div className="projects-page" style={{ paddingTop: '160px' }}>
             <div className="container">
@@ -20,7 +28,6 @@ export default function Projects() {
                     </p>
                 </div>
 
-                {/* Filter */}
                 <div className="flex-mobile-wrap" style={{ display: 'flex', gap: '8px', marginBottom: '64px' }}>
                     {categories.map((category) => (
                         <button
@@ -43,7 +50,7 @@ export default function Projects() {
                 <div style={{ display: 'grid', gap: '2px', background: 'var(--bg-tertiary)' }}>
                     {filteredProjects.map((project) => (
                         <div key={project.id} className="card-tactical project-list-grid" style={{ border: 'none', display: 'grid', gridTemplateColumns: '80px 1fr 300px 150px', alignItems: 'center' }}>
-                            <div className="hide-mobile" style={{ fontFamily: 'var(--font-mono)', opacity: 0.3, fontSize: '14px' }}>0{project.id}</div>
+                            <div className="hide-mobile" style={{ fontFamily: 'var(--font-mono)', opacity: 0.3, fontSize: '14px' }}>{String(project.id).padStart(2, '0')}</div>
                             <div>
                                 <h3 style={{ fontSize: '24px', color: 'var(--text-primary)' }}>{project.title}</h3>
                                 <div style={{ display: 'flex', gap: '16px', marginTop: '4px' }}>
@@ -52,11 +59,17 @@ export default function Projects() {
                                 </div>
                             </div>
                             <div className="hide-mobile" style={{ color: 'var(--color-ash)', opacity: 0.5, fontSize: '14px', paddingRight: '40px' }}>
-                                {project.description.substring(0, 100)}...
+                                {smartTruncate(project.description)}
                             </div>
-                            <a href={project.githubUrl} target="_blank" rel="noreferrer" className="btn-primary-red" style={{ fontSize: '11px', padding: '8px', justifyContent: 'center' }}>
-                                VIEW_CORE
-                            </a>
+                            {project.githubUrl ? (
+                                <a href={project.githubUrl} target="_blank" rel="noreferrer" className="btn-primary-red" style={{ fontSize: '11px', padding: '8px', justifyContent: 'center' }}>
+                                    VIEW_CORE
+                                </a>
+                            ) : (
+                                <span className="btn-primary-red" style={{ fontSize: '11px', padding: '8px', justifyContent: 'center', opacity: 0.5, cursor: 'not-allowed' }}>
+                                    IN_PROGRESS
+                                </span>
+                            )}
                         </div>
                     ))}
                 </div>

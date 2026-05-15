@@ -14,7 +14,6 @@ export default function Home() {
     useEffect(() => {
         const handleMouseMove = (e) => {
             const { innerWidth, innerHeight } = window
-            // Calculate distance from center (-1 to 1)
             const xVal = (e.clientX / innerWidth - 0.5) * 60
             const yVal = (e.clientY / innerHeight - 0.5) * 60
             mouseX.set(xVal)
@@ -24,10 +23,18 @@ export default function Home() {
         return () => window.removeEventListener('mousemove', handleMouseMove)
     }, [mouseX, mouseY])
 
+    // Smart truncation: break at last complete word before maxLen
+    const smartTruncate = (text, maxLen = 120) => {
+        if (text.length <= maxLen) return text
+        const truncated = text.substring(0, maxLen)
+        const lastSpace = truncated.lastIndexOf(' ')
+        return truncated.substring(0, lastSpace) + '…'
+    }
+
     return (
         <main style={{ minHeight: '100vh' }}>
-            {/* HERO SECTION: MISSION BRIEFING */}
-            <section style={{ height: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
+            {/* HERO SECTION */}
+            <section style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: '120px', paddingBottom: '40px' }}>
                 <div className="container">
                     <motion.div 
                         style={{ maxWidth: '800px' }}
@@ -35,13 +42,14 @@ export default function Home() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <div className="mono-label" style={{ marginBottom: '16px' }}>[ INITIALIZING_NEURAL_CORE... OK ]</div>
+                        <div className="mono-label" style={{ marginBottom: '16px' }}>[ SYSTEM_ONLINE // ECE_VLSI ]</div>
                         <h1 style={{ fontSize: 'clamp(48px, 12vw, 120px)', lineHeight: '0.9', fontWeight: 200, marginBottom: '24px', letterSpacing: '-2px' }}>
-                            I VIBECODE <br />
-                            <span style={{ color: 'var(--color-neon-red)' }}>& LEARN_</span>
+                            ECE · VLSI <br />
+                            <span style={{ color: 'var(--color-neon-red)' }}>· EDGE AI_</span>
                         </h1>
                         <p style={{ fontSize: '20px', color: 'var(--color-ash)', opacity: 0.7, marginBottom: '48px', maxWidth: '600px', fontFamily: 'var(--font-mono)' }}>
-                            Shooting & editing film. Reading extensively. Constantly pushing boundaries to learn more and build better. A hybrid of technical precision and creative output.
+                            Building intelligent embedded systems and high-performance circuits. 
+                            Research-driven engineering at the intersection of VLSI design and applied AI.
                         </p>
                         <motion.div 
                             style={{ display: 'flex', gap: '24px' }}
@@ -75,18 +83,54 @@ export default function Home() {
                         </div>
                     </div>
                 </motion.div>
+
+                {/* Scroll Indicator */}
+                <motion.div 
+                    style={{ position: 'absolute', bottom: '24px', left: '50%', transform: 'translateX(-50%)', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px' }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 0.5 }}
+                    transition={{ delay: 1.2, duration: 0.8 }}
+                >
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-secondary)' }}>SCROLL</span>
+                    <motion.div
+                        animate={{ y: [0, 8, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                        style={{ fontSize: '16px', color: 'var(--text-secondary)' }}
+                    >
+                        ↓
+                    </motion.div>
+                </motion.div>
             </section>
 
-            {/* FEATURED PROJECTS: THE WAR ROOM INDEX */}
+            {/* STATS ROW */}
+            <section style={{ padding: '60px 0', borderTop: 'var(--hud-border)', borderBottom: 'var(--hud-border)' }}>
+                <div className="container">
+                    <div className="flex-mobile-wrap" style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', gap: '32px' }}>
+                        {[
+                            { value: '10', label: 'PROJECTS' },
+                            { value: '2×', label: 'HACKATHON_WINS' },
+                            { value: '8.29', label: 'CGPA' },
+                            { value: 'IEEE', label: 'COMSOC_TREASURER' }
+                        ].map((stat) => (
+                            <div key={stat.label} style={{ textAlign: 'center' }}>
+                                <div style={{ fontSize: 'clamp(28px, 5vw, 48px)', fontWeight: 200, fontFamily: 'var(--font-serif)', color: 'var(--text-primary)' }}>{stat.value}</div>
+                                <div className="mono-label" style={{ marginTop: '8px', fontSize: '10px' }}>{stat.label}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* FEATURED PROJECTS */}
             <section style={{ padding: '120px 0', background: 'var(--bg-tertiary)' }}>
                 <div className="container">
                     <div style={{ marginBottom: '80px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                         <div>
-                            <div className="mono-label">REPOSITORIES // STACK_7</div>
+                            <div className="mono-label">REPOSITORIES // STACK_10</div>
                             <h2 style={{ fontSize: '48px', marginTop: '16px' }}>Mission Output</h2>
                         </div>
                         <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textAlign: 'right' }}>
-                            TOTAL_NODES: 07 <br />
+                            TOTAL_NODES: 10 <br />
                             STATUS: STABLE
                         </div>
                     </div>
@@ -96,11 +140,11 @@ export default function Home() {
                             <div key={project.id} className="card-tactical">
                                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '24px' }}>
                                     <span className="mono-label">{project.category}</span>
-                                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', opacity: 0.5 }}>#{project.id}</span>
+                                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', opacity: 0.5 }}>#{String(project.id).padStart(2, '0')}</span>
                                 </div>
                                 <h3 style={{ fontSize: '28px', marginBottom: '16px', color: 'var(--text-primary)' }}>{project.title}</h3>
-                                <p style={{ color: 'var(--color-ash)', opacity: 0.6, fontSize: '15px', marginBottom: '32px', height: '80px', overflow: 'hidden' }}>
-                                    {project.description}
+                                <p style={{ color: 'var(--color-ash)', opacity: 0.6, fontSize: '15px', marginBottom: '32px', minHeight: '60px' }}>
+                                    {smartTruncate(project.description)}
                                 </p>
                                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '32px' }}>
                                     {project.techStack.map(tech => (
@@ -109,49 +153,17 @@ export default function Home() {
                                         </span>
                                     ))}
                                 </div>
-                                <a href={project.githubUrl} target="_blank" rel="noreferrer" className="btn-primary-red" style={{ width: '100%', justifyContent: 'center', fontSize: '11px', padding: '10px' }}>
-                                    INSPECT_CORE
-                                </a>
+                                {project.githubUrl ? (
+                                    <a href={project.githubUrl} target="_blank" rel="noreferrer" className="btn-primary-red" style={{ width: '100%', justifyContent: 'center', fontSize: '11px', padding: '10px', position: 'relative', zIndex: 1 }}>
+                                        INSPECT_CORE
+                                    </a>
+                                ) : (
+                                    <span className="btn-primary-red" style={{ width: '100%', justifyContent: 'center', fontSize: '11px', padding: '10px', opacity: 0.5, cursor: 'not-allowed', position: 'relative', zIndex: 1 }}>
+                                        IN_PROGRESS
+                                    </span>
+                                )}
                             </div>
                         ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* TECHNICAL SPECS: THE TERMINAL */}
-            <section style={{ padding: '120px 0' }} className="mobile-padding-reduce">
-                <div className="container">
-                    <div className="grid-2-col" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px' }}>
-                        <div style={{ background: 'var(--bg-secondary)', padding: '48px', border: 'var(--hud-border)' }}>
-                            <div className="mono-label" style={{ marginBottom: '24px' }}>TERMINAL_OUTPUT</div>
-                            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '14px', lineHeight: '1.8', color: '#555' }}>
-                                {`> systemctl start research_core`} <br />
-                                {`> fetching kl_connect telemetry... OK`} <br />
-                                {`> analyzing hybrid_pso_sa_algorithm...`} <br />
-                                <span style={{ color: 'var(--color-neon-red)' }}>{`> optimal_found: true`}</span> <br />
-                                {`> status: mission_ready`} <br />
-                                <br />
-                                <span style={{ color: 'var(--text-primary)' }}>$ portfolio --info --all</span>
-                            </div>
-                        </div>
-                        <div>
-                            <h2 style={{ fontSize: '40px', marginBottom: '32px' }}>Operational <br /> Capabilities</h2>
-                            <p style={{ color: 'var(--color-ash)', opacity: 0.6, marginBottom: '40px' }}>
-                                Bridging the gap between high-level AI orchestration and 
-                                low-level VLSI circuit optimization. Mission-ready for 
-                                complex research and deployment.
-                            </p>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
-                                <div>
-                                    <div className="mono-label">Core_Sectors</div>
-                                    <div style={{ fontSize: '18px', fontWeight: 600 }}>AI / Quantum / VLSI</div>
-                                </div>
-                                <div>
-                                    <div className="mono-label">Deployment</div>
-                                    <div style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-neon-red)' }}>Active_Ready</div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>

@@ -20,7 +20,6 @@ export default function Videos() {
                     </p>
                 </div>
 
-                {/* Category Filter */}
                 <div className="flex-mobile-wrap" style={{ display: 'flex', gap: '8px', marginBottom: '64px' }}>
                     {videoCategories.map((category) => (
                         <button
@@ -43,8 +42,12 @@ export default function Videos() {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 350px), 1fr))', gap: '32px' }}>
                     {filteredVideos.map((video) => (
                         <div key={video.id} className="card-tactical">
-                            <div style={{ position: 'relative', marginBottom: '24px', aspectRatio: '16/9', background: 'var(--bg-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', border: 'var(--hud-border)' }}>
-                                <div className="mono-label" style={{ opacity: 0.3 }}>MEDIA_PLACEHOLDER</div>
+                            <div style={{ position: 'relative', marginBottom: '24px', aspectRatio: '16/9', background: 'var(--bg-secondary)', overflow: 'hidden', border: 'var(--hud-border)' }}>
+                                <img 
+                                    src={video.thumbnail} 
+                                    alt={video.title}
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                />
                                 <div style={{ position: 'absolute', bottom: '12px', right: '12px', background: 'var(--accent)', color: 'var(--bg-primary)', padding: '4px 8px', fontSize: '10px', fontFamily: 'var(--font-mono)' }}>{video.platform.toUpperCase()}</div>
                             </div>
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>

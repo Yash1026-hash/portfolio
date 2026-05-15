@@ -2,24 +2,33 @@
 export const achievements = [
     {
         id: 1,
-        title: '3rd Prize - Urban Vision Hackathon',
+        title: 'Top 3 / 200+ Teams — Urban Vision Hackathon, IISc Bangalore',
         category: 'Competition',
         year: '2024',
-        description: 'Smart Urban Traffic Reduction project at IISC Bangalore. Built real-time object detection system using YOLO v8l and ResNet for optimizing traffic signals.',
-        organization: 'IISC Bangalore',
+        description: 'Smart Urban Traffic Density Analyzer at IISc Bangalore. Built real-time object detection system using YOLO v8l and ResNet for optimizing traffic signals. Competed against 200+ teams from across India.',
+        organization: 'IISc Bangalore',
         highlight: true
     },
     {
         id: 2,
-        title: '3rd Prize - VR Siddhartha Hackathon',
+        title: 'Top 3 — VR Siddhartha Hackathon',
         category: 'Competition',
         year: '2023',
-        description: 'Lane Keeping Car project demonstrating autonomous vehicle capabilities using OpenCV and Raspberry Pi 4.',
+        description: 'Autonomous Lane Keeping Robot demonstrating real-time embedded computer vision using OpenCV and Raspberry Pi 4.',
         organization: 'VR Siddhartha University',
         highlight: true
     },
     {
         id: 3,
+        title: 'IEEE ComSoc Treasurer',
+        category: 'Leadership',
+        year: '2024',
+        description: 'Treasurer of the IEEE Communications Society student chapter at KL University. Managing budgets and organizing technical workshops and research events.',
+        organization: 'IEEE ComSoc, KL University',
+        highlight: true
+    },
+    {
+        id: 4,
         title: 'Cadence Spectre Level 1',
         category: 'Certification',
         year: '2024',
@@ -28,7 +37,7 @@ export const achievements = [
         highlight: false
     },
     {
-        id: 4,
+        id: 5,
         title: 'Embedded Systems and IoT Level 1',
         category: 'Certification',
         year: '2024',
@@ -37,8 +46,8 @@ export const achievements = [
         highlight: false
     },
     {
-        id: 5,
-        title: 'Vice President - Aparmaya Club',
+        id: 6,
+        title: 'Vice President — Aparmaya Club',
         category: 'Leadership',
         year: '2024',
         description: 'Leading AI & Autonomous Systems projects at the college technical club. Organizing workshops and hackathons.',
@@ -46,8 +55,8 @@ export const achievements = [
         highlight: true
     },
     {
-        id: 6,
-        title: 'Core Member - PULSE Broadcasting',
+        id: 7,
+        title: 'Core Member — PULSE Broadcasting',
         category: 'Leadership',
         year: '2024',
         description: 'Active member of the ECE Student Body broadcasting team, contributing to department communications.',
@@ -55,8 +64,8 @@ export const achievements = [
         highlight: false
     },
     {
-        id: 7,
-        title: 'Perfect 10 CGPA - SSC',
+        id: 8,
+        title: 'Perfect 10 CGPA — SSC',
         category: 'Academic',
         year: '2021',
         description: 'Achieved perfect 10/10 CGPA in 10th Standard examinations at ZPHS Konijerla.',

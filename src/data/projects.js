@@ -1,27 +1,27 @@
-// Centralized project data for the portfolio - UPDATED WITH GITHUB REPOS
+// Centralized project data for the portfolio - UPDATED WITH REAL PROJECTS
 export const projects = [
     {
         id: 1,
-        title: 'KL-CONNECT',
-        category: 'Mobile',
-        year: '2025',
-        description: 'A high-precision connectivity platform built with Dart and Flutter. Focuses on seamless integration and enterprise-grade observability.',
-        techStack: ['Dart', 'Flutter', 'Firebase', 'State Management'],
-        githubUrl: 'https://github.com/Yash1026-hash/KL-CONNECT',
+        title: 'Traffic Density Analyzer',
+        category: 'AI/ML',
+        year: '2024',
+        description: 'Smart urban traffic density estimation and signal optimization using YOLO v8l and ResNet. Achieved Top 3 out of 200+ teams at IISc Bangalore Urban Vision Hackathon.',
+        techStack: ['Python', 'YOLO v8l', 'ResNet', 'OpenCV', 'Real-time Detection'],
+        githubUrl: 'https://github.com/Yash1026-hash',
         liveUrl: null,
-        image: '/kl-connect.png',
+        image: '/traffic.png',
         featured: true
     },
     {
         id: 2,
-        title: 'ChipCycle RL Environment',
-        category: 'AI/ML',
-        year: '2024',
-        description: 'Custom Reinforcement Learning environment for optimizing chip recycling processes. Developed for the Meta OpenEnv hackathon.',
-        techStack: ['Python', 'Gymnasium', 'Reinforcement Learning', 'OpenEnv'],
-        githubUrl: 'https://github.com/Yash1026-hash/chipcycle-env',
+        title: 'FPGA DSP Chain',
+        category: 'VLSI',
+        year: '2025',
+        description: 'Five-IP AXI4-Stream digital signal processing pipeline on Xilinx Artix-7 FPGA. Implements FIR filter, FFT, decimator, interpolator, and gain control with full AXI4 compliance.',
+        techStack: ['Verilog', 'Vivado', 'AXI4-Stream', 'Artix-7', 'DSP'],
+        githubUrl: 'https://github.com/Yash1026-hash',
         liveUrl: null,
-        image: '/chipcycle.png',
+        image: '/quantum.png',
         featured: true
     },
     {
@@ -38,6 +38,42 @@ export const projects = [
     },
     {
         id: 4,
+        title: 'MANGO — Disease Detection',
+        category: 'Computer Vision',
+        year: '2025',
+        description: 'YOLOv8-based deep learning framework for mango disease detection and classification, published in IEEE research for agricultural automation.',
+        techStack: ['Python', 'YOLOv8', 'Deep Learning', 'Computer Vision'],
+        githubUrl: 'https://github.com/Yash1026-hash/MANGO',
+        liveUrl: null,
+        image: '/mango.png',
+        featured: true
+    },
+    {
+        id: 5,
+        title: 'Autonomous Lane Robot',
+        category: 'Embedded',
+        year: '2023',
+        description: 'Autonomous lane-keeping car using OpenCV and Raspberry Pi 4. Achieved Top 3 at VR Siddhartha Hackathon demonstrating real-time embedded computer vision.',
+        techStack: ['Python', 'OpenCV', 'Raspberry Pi 4', 'Embedded Systems'],
+        githubUrl: 'https://github.com/Yash1026-hash',
+        liveUrl: null,
+        image: '/lane.png',
+        featured: true
+    },
+    {
+        id: 6,
+        title: 'ChipCycle RL Environment',
+        category: 'AI/ML',
+        year: '2024',
+        description: 'Custom Reinforcement Learning environment for optimizing chip recycling processes. Developed for the Meta OpenEnv hackathon.',
+        techStack: ['Python', 'Gymnasium', 'Reinforcement Learning', 'OpenEnv'],
+        githubUrl: 'https://github.com/Yash1026-hash/chipcycle-env',
+        liveUrl: null,
+        image: '/chipcycle.png',
+        featured: true
+    },
+    {
+        id: 7,
         title: 'Quick-Rescue',
         category: 'Social Impact',
         year: '2024',
@@ -49,7 +85,7 @@ export const projects = [
         featured: true
     },
     {
-        id: 5,
+        id: 8,
         title: 'GHCI-25 Financial Classifier',
         category: 'AI/ML',
         year: '2025',
@@ -58,22 +94,22 @@ export const projects = [
         githubUrl: 'https://github.com/Yash1026-hash/-GHCI-25-Hackathon',
         liveUrl: null,
         image: '/ghci.png',
-        featured: true
-    },
-    {
-        id: 6,
-        title: 'MANGO - Mango Detection',
-        category: 'Computer Vision',
-        year: '2025',
-        description: 'Deep learning framework for mango detection and classification, published in IEEE research for agricultural automation.',
-        techStack: ['Python', 'Deep Learning', 'Computer Vision', 'YOLO'],
-        githubUrl: 'https://github.com/Yash1026-hash/MANGO',
-        liveUrl: null,
-        image: '/mango.png',
         featured: false
     },
     {
-        id: 7,
+        id: 9,
+        title: 'KL-CONNECT',
+        category: 'Mobile',
+        year: '2025',
+        description: 'A high-precision connectivity platform built with Dart and Flutter. Focuses on seamless integration and enterprise-grade observability.',
+        techStack: ['Dart', 'Flutter', 'Firebase', 'State Management'],
+        githubUrl: 'https://github.com/Yash1026-hash/KL-CONNECT',
+        liveUrl: null,
+        image: '/kl-connect.png',
+        featured: false
+    },
+    {
+        id: 10,
         title: 'RCID - Earthquake Detection',
         category: 'Research',
         year: '2025',
@@ -82,7 +118,7 @@ export const projects = [
         githubUrl: null,
         liveUrl: null,
         image: '/rcid.png',
-        featured: true,
+        featured: false,
         ongoing: true
     }
 ];

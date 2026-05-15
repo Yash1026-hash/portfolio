@@ -14,7 +14,7 @@ export default function Footer() {
             <div className="container">
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <div style={{ opacity: 0.5 }}>
-                        © {year} K_YASHWANTH_CHOWDHARY // SYSTEM_VERSION_3.0
+                        © {year} K_YASHWANTH_CHOWDHARY
                     </div>
                     <div style={{ display: 'flex', gap: '32px' }}>
                         <a href="https://github.com/Yash1026-hash" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>GITHUB</a>
