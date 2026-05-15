@@ -32,7 +32,7 @@ export default function Contact() {
         <div className="contact-page" style={{ paddingTop: '160px' }}>
             <div className="container">
                 <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-                    <div className="card-tactical" style={{ padding: '64px', textAlign: 'center' }}>
+                    <div className="card-tactical contact-card-mobile" style={{ padding: '64px', textAlign: 'center' }}>
                         <div className="mono-label" style={{ color: 'var(--color-neon-red)' }}>ESTABLISH_COMM_LINK</div>
                         <h1 style={{ fontSize: '64px', margin: '24px 0 40px', fontWeight: 200 }}>CONTACT_</h1>
                         <p style={{ color: 'var(--color-ash)', opacity: 0.6, fontSize: '20px', marginBottom: '24px', fontFamily: 'var(--font-mono)' }}>

@@ -34,7 +34,7 @@ export default function Home() {
     return (
         <main style={{ minHeight: '100vh' }}>
             {/* HERO SECTION */}
-            <section style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: '120px', paddingBottom: '40px' }}>
+            <section className="hero-section-mobile" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: '120px', paddingBottom: '40px' }}>
                 <div className="container">
                     <motion.div 
                         style={{ maxWidth: '800px' }}
@@ -105,7 +105,7 @@ export default function Home() {
             {/* STATS ROW */}
             <section style={{ padding: '60px 0', borderTop: 'var(--hud-border)', borderBottom: 'var(--hud-border)' }}>
                 <div className="container">
-                    <div className="flex-mobile-wrap" style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', gap: '32px' }}>
+                    <div className="stats-row">
                         {[
                             { value: '10', label: 'PROJECTS' },
                             { value: '2×', label: 'HACKATHON_WINS' },
@@ -122,7 +122,7 @@ export default function Home() {
             </section>
 
             {/* FEATURED PROJECTS */}
-            <section style={{ padding: '120px 0', background: 'var(--bg-tertiary)' }}>
+            <section className="mobile-padding-reduce" style={{ padding: '120px 0', background: 'var(--bg-tertiary)' }}>
                 <div className="container">
                     <div style={{ marginBottom: '80px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                         <div>

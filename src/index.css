@@ -237,6 +237,18 @@ h1, h2, h3 {
   padding: 0 24px;
 }
 
+/* Stats Row */
+.stats-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 32px;
+}
+
+.stats-row > div {
+  text-align: center;
+}
+
 /* --- MOBILE RESPONSIVENESS OVERRIDES --- */
 @media (max-width: 768px) {
   .container {
@@ -244,31 +256,31 @@ h1, h2, h3 {
   }
 
   /* Typography Scaling */
-  h1 { font-size: clamp(36px, 10vw, 64px) !important; }
-  h2 { font-size: clamp(28px, 8vw, 48px) !important; }
-  h3 { font-size: clamp(20px, 6vw, 32px) !important; }
+  h1 { font-size: clamp(28px, 8vw, 56px) !important; }
+  h2 { font-size: clamp(24px, 7vw, 44px) !important; }
+  h3 { font-size: clamp(18px, 5vw, 28px) !important; }
 
   /* Utility Grid Layouts */
   .grid-2-col {
     grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    gap: 24px !important;
   }
 
   .about-hero-grid {
     grid-template-columns: 1fr !important;
-    gap: 32px !important;
+    gap: 24px !important;
     text-align: center;
   }
   
   .about-hero-grid > div:first-child {
-    max-width: 250px;
+    max-width: 200px;
     margin: 0 auto;
   }
 
   .project-list-grid {
     grid-template-columns: 1fr !important;
-    gap: 16px !important;
-    padding: 24px !important;
+    gap: 12px !important;
+    padding: 20px 16px !important;
   }
 
   .project-list-grid .hide-mobile {
@@ -278,12 +290,13 @@ h1, h2, h3 {
   /* Utility Flex Layouts */
   .flex-mobile-wrap {
     flex-wrap: wrap !important;
+    gap: 6px !important;
   }
 
   .mobile-stack {
     flex-direction: column !important;
     align-items: flex-start !important;
-    gap: 16px !important;
+    gap: 12px !important;
   }
 
   .hide-mobile {
@@ -291,31 +304,128 @@ h1, h2, h3 {
   }
 
   /* Navbar Adjustments */
+  .navbar-war-room {
+    padding: 12px 0 !important;
+  }
+
   .nav-container {
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
     align-items: flex-start;
+    padding-bottom: 8px;
+  }
+
+  .nav-container > a:first-child {
+    font-size: 16px !important;
+    letter-spacing: 2px !important;
   }
 
   .nav-container > div {
     width: 100%;
     overflow-x: auto;
-    padding-bottom: 8px;
+    padding-bottom: 4px;
+    gap: 4px !important;
     justify-content: flex-start !important;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .nav-container > div::-webkit-scrollbar {
+    display: none;
   }
 
   .nav-link-red {
     white-space: nowrap;
-    padding: 6px 8px;
+    padding: 4px 8px;
+    font-size: 11px !important;
+  }
+
+  /* Hide resume button in nav on mobile — it's accessible from HeroCard */
+  .nav-resume-btn {
+    display: none !important;
+  }
+
+  /* Hide theme toggle border on mobile */
+  .nav-theme-divider {
+    margin-left: 4px !important;
+    padding-left: 8px !important;
+    border-left: none !important;
+  }
+
+  /* Card Adjustments */
+  .card-tactical {
+    padding: 20px !important;
+  }
+
+  /* Hero Section */
+  .hero-section-mobile {
+    min-height: 70vh !important;
+    padding-top: 100px !important;
+    padding-bottom: 20px !important;
+  }
+
+  /* Stats Row */
+  .stats-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+    padding: 40px 0 !important;
+  }
+
+  .stats-row > div {
+    text-align: center;
+  }
+
+  /* Contact Page */
+  .contact-card-mobile {
+    padding: 32px 20px !important;
+  }
+
+  /* Page top padding */
+  .projects-page,
+  .achievements-page,
+  .about-page,
+  .contact-page,
+  .videos-page {
+    padding-top: 120px !important;
+  }
+
+  /* Footer */
+  footer .container > div {
+    flex-direction: column !important;
+    gap: 16px !important;
+    text-align: center !important;
+  }
+
+  /* Decorative overlays — hide on mobile for cleanliness */
+  .hud-line {
+    display: none !important;
   }
 
   /* General Spacing Reductions */
   .mobile-padding-reduce {
-    padding: 60px 0 !important;
+    padding: 40px 0 !important;
   }
 
   .mobile-margin-reduce {
-    margin-bottom: 40px !important;
+    margin-bottom: 32px !important;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  h1 { font-size: clamp(24px, 7vw, 48px) !important; }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  .card-tactical {
+    padding: 16px !important;
+  }
+
+  .stats-row {
+    gap: 16px !important;
   }
 }

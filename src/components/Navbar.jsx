@@ -20,7 +20,7 @@ export default function Navbar() {
                         YASH_
                     </Link>
 
-                    <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+                    <div style={{ display: 'flex', gap: '24px', alignItems: 'center' }}>
                         {navLinks.map((link) => (
                             <Link
                                 key={link.path}
@@ -33,7 +33,7 @@ export default function Navbar() {
                         <a
                             href="/resume.pdf"
                             download="Kamsani_Yashwanth_Resume.pdf"
-                            className="nav-link-red"
+                            className="nav-link-red nav-resume-btn"
                             style={{ 
                                 color: 'var(--accent-secondary)', 
                                 border: '1px solid var(--accent-secondary)',
@@ -51,7 +51,7 @@ export default function Navbar() {
                                 <line x1="12" y1="15" x2="12" y2="3"></line>
                             </svg>
                         </a>
-                        <div style={{ marginLeft: '16px', paddingLeft: '24px', borderLeft: '1px solid var(--border-hud)' }}>
+                        <div className="nav-theme-divider" style={{ marginLeft: '16px', paddingLeft: '24px', borderLeft: '1px solid var(--border-hud)' }}>
                             <ThemeToggle />
                         </div>
                     </div>
