@@ -111,7 +111,7 @@ export default function Home() {
                 <div className="container">
                     <div className="stats-row">
                         {[
-                            { value: '10', label: 'PROJECTS' },
+                            { value: '11', label: 'PROJECTS' },
                             { value: '2×', label: 'HACKATHON_WINS' },
                             { value: '8.29', label: 'CGPA' },
                             { value: 'IEEE', label: 'COMSOC_TREASURER' }
@@ -130,11 +130,11 @@ export default function Home() {
                 <div className="container">
                     <div style={{ marginBottom: '80px', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                         <div>
-                            <div className="mono-label">REPOSITORIES // STACK_10</div>
+                            <div className="mono-label">REPOSITORIES // STACK_11</div>
                             <h2 style={{ fontSize: '48px', marginTop: '16px' }}>Mission Output</h2>
                         </div>
                         <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', textAlign: 'right' }}>
-                            TOTAL_NODES: 10 <br />
+                            TOTAL_NODES: 11 <br />
                             STATUS: STABLE
                         </div>
                     </div>
