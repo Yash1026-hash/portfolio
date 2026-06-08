@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { featuredProjects } from '../data/projects'
 import Footer from '../components/Footer'
+import GitHubActivity from '../components/GitHubActivity'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { useEffect } from 'react'
 
@@ -167,6 +168,8 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            <GitHubActivity />
 
             <Footer />
 
