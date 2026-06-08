@@ -120,6 +120,18 @@ export const projects = [
         image: '/rcid.png',
         featured: false,
         ongoing: true
+    },
+    {
+        id: 11,
+        title: 'Nitro — LinkedIn Automation',
+        category: 'AI/ML',
+        year: '2026',
+        description: 'Fully automated LinkedIn content engine that generates one technical post per day using Gemini AI and publishes it via the LinkedIn Posts API — all orchestrated through GitHub Actions on a daily cron schedule.',
+        techStack: ['Python', 'Gemini API', 'GitHub Actions', 'LinkedIn API', 'OAuth 2.0', 'Vercel'],
+        githubUrl: 'https://github.com/Yash1026-hash/nitro',
+        liveUrl: null,
+        image: '/nitro.png',
+        featured: true
     }
 ];
 
