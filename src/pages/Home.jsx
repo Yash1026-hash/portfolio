@@ -35,34 +35,36 @@ export default function Home() {
     return (
         <main style={{ minHeight: '100vh' }}>
             {/* HERO SECTION */}
-            <section className="hero-section-mobile" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: '120px', paddingBottom: '40px' }}>
+            <section className="hero-section-mobile" style={{ minHeight: '90vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: '120px', paddingBottom: '60px' }}>
                 <div className="container">
                     <motion.div 
-                        style={{ maxWidth: '800px' }}
+                        style={{ maxWidth: '700px' }}
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <div className="mono-label" style={{ marginBottom: '16px' }}>[ SYSTEM_ONLINE // ECE_VLSI ]</div>
-                        <h1 style={{ fontSize: 'clamp(48px, 12vw, 120px)', lineHeight: '0.9', fontWeight: 200, marginBottom: '24px', letterSpacing: '-2px' }}>
-                            ECE · VLSI <br />
-                            <span style={{ color: 'var(--color-neon-red)' }}>· EDGE AI_</span>
+                        <div className="mono-label" style={{ marginBottom: '20px' }}>[ VLSI + EMBEDDED AI PORTFOLIO ]</div>
+                        <h1 style={{ fontSize: 'clamp(52px, 11vw, 110px)', lineHeight: '1.0', fontWeight: 300, marginBottom: '28px', letterSpacing: '-2px', fontFamily: 'var(--font-serif)' }}>
+                            VLSI &amp; <br />
+                            Embedded <br />
+                            <span style={{ color: 'var(--accent-secondary)' }}>AI Engineer_</span>
                         </h1>
-                        <p style={{ fontSize: '20px', color: 'var(--color-ash)', opacity: 0.7, marginBottom: '48px', maxWidth: '600px', fontFamily: 'var(--font-mono)' }}>
-                            Building intelligent embedded systems and high-performance circuits. 
-                            Research-driven engineering at the intersection of VLSI design and applied AI.
+                        <p style={{ fontSize: '16px', color: 'var(--text-secondary)', marginBottom: '48px', maxWidth: '560px', fontFamily: 'var(--font-mono)', lineHeight: 1.7 }}>
+                            I build at the intersection of FPGA digital design, computer vision, 
+                            and edge systems. My work moves from circuits and signals to deployable 
+                            AI prototypes.
                         </p>
                         <motion.div 
-                            style={{ display: 'flex', gap: '24px' }}
+                            style={{ display: 'flex', gap: '24px', alignItems: 'center', flexWrap: 'wrap' }}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
                         >
                             <Link to="/contact" className="btn-primary-red">
-                                INITIATE_CONTACT
+                                CONTACT ME
                             </Link>
-                            <Link to="/projects" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '13px', display: 'flex', alignItems: 'center' }}>
-                                VIEW_REPOSITORIES
+                            <Link to="/projects" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '13px', display: 'flex', alignItems: 'center', opacity: 0.7 }}>
+                                View Projects →
                             </Link>
                         </motion.div>
                     </motion.div>
@@ -78,7 +80,7 @@ export default function Home() {
                 >
                     <div style={{ width: '400px', height: '400px', border: 'var(--hud-border)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                         <div style={{ width: '300px', height: '300px', border: 'var(--hud-border)', borderStyle: 'dashed', borderRadius: '50%', animation: 'spin 20s linear infinite' }}></div>
-                        <div style={{ position: 'absolute', fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--color-neon-red)' }}>
+                        <div style={{ position: 'absolute', fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--accent-secondary)', textAlign: 'center' }}>
                             SEC_ZONE_9 <br />
                             ACTIVE_SCN
                         </div>
@@ -102,6 +104,7 @@ export default function Home() {
                     </motion.div>
                 </motion.div>
             </section>
+
 
             {/* STATS ROW */}
             <section style={{ padding: '60px 0', borderTop: 'var(--hud-border)', borderBottom: 'var(--hud-border)' }}>
