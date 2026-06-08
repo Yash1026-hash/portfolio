@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
-import Videos from './pages/Videos'
+import Creative from './pages/Creative'
 import Achievements from './pages/Achievements'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -16,7 +16,6 @@ function App() {
     return (
         <div className="crimson-intelligence">
             {/* HUD OVERLAYS */}
-            <div className="scanlines"></div>
             <div className="hex-grid-red"></div>
             
             {/* Global HUD elements */}
@@ -32,7 +31,7 @@ function App() {
                     <Routes location={location} key={location.pathname}>
                         <Route path="/" element={<PixelTransition><Home /></PixelTransition>} />
                         <Route path="/projects" element={<PixelTransition><Projects /></PixelTransition>} />
-                        <Route path="/videos" element={<PixelTransition><Videos /></PixelTransition>} />
+                        <Route path="/creative" element={<PixelTransition><Creative /></PixelTransition>} />
                         <Route path="/achievements" element={<PixelTransition><Achievements /></PixelTransition>} />
                         <Route path="/about" element={<PixelTransition><About /></PixelTransition>} />
                         <Route path="/contact" element={<PixelTransition><Contact /></PixelTransition>} />
@@ -42,10 +41,10 @@ function App() {
 
             {/* Corner Markers */}
             <div style={{ position: 'fixed', top: '20px', left: '20px', color: 'var(--color-neon-red)', fontFamily: 'var(--font-mono)', fontSize: '10px', zIndex: 10000, opacity: 0.15, pointerEvents: 'none' }}>
-                TR-NITY // SYS_AUTH_01
+                KL_ECE // VLSI_SPECIALIZATION
             </div>
             <div style={{ position: 'fixed', bottom: '20px', right: '20px', color: 'var(--color-neon-red)', fontFamily: 'var(--font-mono)', fontSize: '10px', zIndex: 10000, opacity: 0.15, pointerEvents: 'none' }}>
-                SEC_ZONE // LN_99
+                GRADUATING_2027 // MS_TARGET_F27
             </div>
         </div>
     )

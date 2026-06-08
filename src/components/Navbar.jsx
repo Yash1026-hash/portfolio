@@ -7,6 +7,7 @@ export default function Navbar() {
     const navLinks = [
         { path: '/', label: 'HOME' },
         { path: '/projects', label: 'PROJECTS' },
+        { path: '/creative', label: 'CREATIVE' },
         { path: '/achievements', label: 'ACHIEVEMENTS' },
         { path: '/about', label: 'ABOUT' },
         { path: '/contact', label: 'CONTACT' }

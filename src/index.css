@@ -3,30 +3,32 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap');
 
 :root {
-  /* --- MONOCHROME PALETTE (DARK) --- */
-  --bg-primary: #050505;
-  --bg-secondary: #0f0f0f;
-  --bg-tertiary: #1a1a1a;
+  /* --- THEME PALETTE (DARK) --- */
+  --bg-primary: #080a0f;
+  --bg-secondary: #0d1117;
+  --bg-tertiary: #161b22;
   
-  --text-primary: #ffffff;
-  --text-secondary: #888888;
+  --text-primary: #e6edf3;
+  --text-secondary: #7d8590;
   
   --accent: #ffffff;
-  --accent-secondary: #0ea5e9; /* Clean cyan for tech elements */
+  --accent-tech: #39d353;
+  --accent-visual: #f0883e;
   
-  --hud-border: 1px solid rgba(255, 255, 255, 0.1);
-  --hud-border-raw: 255, 255, 255, 0.1;
-  --hud-glow: 0 0 20px rgba(14, 165, 233, 0.15);
+  --hud-border: 1px solid rgba(255, 255, 255, 0.08);
+  --hud-border-raw: 255, 255, 255, 0.08;
+  --hud-glow: 0 0 20px rgba(57, 211, 83, 0.15);
   --scanline-color: rgba(255, 255, 255, 0.03);
   --hex-grid-color: %23ffffff;
   --hex-opacity: 0.05;
-  --nav-bg: linear-gradient(to bottom, rgba(5,5,5,0.9), transparent);
+  --nav-bg: linear-gradient(to bottom, rgba(8,10,15,0.9), transparent);
   
   /* Map old variables temporarily to prevent breaking */
   --color-void: var(--bg-primary);
   --color-surface-dark: var(--bg-secondary);
   --color-surface-elevated: var(--bg-tertiary);
-  --color-neon-red: var(--accent-secondary);
+  --color-neon-red: var(--accent-tech);
+  --accent-secondary: var(--accent-tech);
   --color-ash: var(--text-primary);
   --color-slate-gray: var(--text-secondary);
   --border-hud: var(--hud-border);
@@ -75,45 +77,32 @@ body {
 }
 
 /* --- THE WAR ROOM BACKGROUND --- */
-.scanlines {
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  pointer-events: none;
-  background: linear-gradient(rgba(0, 0, 0, 0) 50%, var(--scanline-color) 50%);
-  background-size: 100% 2px;
-}
-
-.scanlines::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: linear-gradient(0deg, transparent 0%, var(--scanline-color) 50%, transparent 100%);
-  animation: scanline 10s linear infinite;
-}
-
 .hex-grid-red {
   position: fixed;
   inset: 0;
   z-index: 0;
-  opacity: var(--hex-opacity);
+  opacity: 0.03;
   pointer-events: none;
-  background-image: var(--hex-grid, url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0' stroke='%23888888' stroke-width='1'/%3E%3C/svg%3E"));
-  background-size: 60px 52px;
-}
-
-@keyframes scanline {
-  0% { transform: translateY(-100vh); }
-  100% { transform: translateY(100vh); }
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40 H30 M50 40 H80 M40 0 V30 M40 50 V80' stroke='%23ffffff' stroke-width='0.5' fill='none'/%3E%3Ccircle cx='40' cy='40' r='3' stroke='%23ffffff' stroke-width='0.5' fill='none'/%3E%3Ccircle cx='0' cy='40' r='2' stroke='%23ffffff' stroke-width='0.5' fill='none'/%3E%3Ccircle cx='80' cy='40' r='2' stroke='%23ffffff' stroke-width='0.5' fill='none'/%3E%3Ccircle cx='40' cy='0' r='2' stroke='%23ffffff' stroke-width='0.5' fill='none'/%3E%3Ccircle cx='40' cy='80' r='2' stroke='%23ffffff' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
 }
 
 /* --- TYPOGRAPHY SYSTEM --- */
-h1, h2, h3 {
+h1 {
+  font-family: var(--font-serif);
+  font-weight: 200;
+  letter-spacing: -0.01em;
+}
+
+h2 {
   font-family: var(--font-serif);
   font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
   letter-spacing: -0.01em;
 }
 
@@ -122,7 +111,15 @@ h1, h2, h3 {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  color: var(--color-neon-red);
+  color: var(--accent-tech);
+}
+
+.mono-label-visual {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--accent-visual);
 }
 
 /* --- COMPONENTS --- */

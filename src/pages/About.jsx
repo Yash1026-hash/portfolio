@@ -34,7 +34,7 @@ export default function About() {
             <div className="container">
                 <section className="card-tactical about-hero-grid" style={{ marginBottom: '80px', display: 'grid', gridTemplateColumns: '300px 1fr', gap: '64px', alignItems: 'center' }}>
                     <div style={{ position: 'relative' }}>
-                        <img src="/PPF.jpeg?v=2" alt="Profile" style={{ width: '100%', filter: 'grayscale(1) contrast(1.2)' }} />
+                        <img src="/PPF.jpeg?v=2" alt="Profile" style={{ width: '100%', filter: 'grayscale(0.8) contrast(1.1) brightness(1.05)', border: '2px solid rgba(57, 211, 83, 0.2)', boxShadow: '0 0 20px rgba(57, 211, 83, 0.08)' }} />
                         <div style={{ position: 'absolute', inset: 0, border: 'var(--hud-border)', opacity: 0.3 }}></div>
                     </div>
                     <div style={{ minWidth: 0 }}>

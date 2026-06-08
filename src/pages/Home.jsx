@@ -49,10 +49,8 @@ export default function Home() {
                             Embedded <br />
                             <span style={{ color: 'var(--accent-secondary)' }}>AI Engineer_</span>
                         </h1>
-                        <p style={{ fontSize: '16px', color: 'var(--text-secondary)', marginBottom: '48px', maxWidth: '560px', fontFamily: 'var(--font-mono)', lineHeight: 1.7 }}>
-                            I build at the intersection of FPGA digital design, computer vision, 
-                            and edge systems. My work moves from circuits and signals to deployable 
-                            AI prototypes.
+                        <p style={{ fontSize: '16px', color: 'var(--text-secondary)', marginBottom: '48px', maxWidth: '560px', fontFamily: 'var(--font-sans)', lineHeight: 1.7 }}>
+                            I design at register-transfer level and deploy at the edge. VLSI circuits in the morning, computer vision models by night — and somewhere in between, I cut the event reels.
                         </p>
                         <motion.div 
                             style={{ display: 'flex', gap: '24px', alignItems: 'center', flexWrap: 'wrap' }}
