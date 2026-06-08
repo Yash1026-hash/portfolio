@@ -74,7 +74,7 @@ const PixelTransition = ({ children }) => {
 
     useEffect(() => {
         setShowBoot(true);
-        const timer = setTimeout(() => setShowBoot(false), 850);
+        const timer = setTimeout(() => setShowBoot(false), 500);
         return () => clearTimeout(timer);
     }, [location.pathname]);
 
@@ -89,7 +89,7 @@ const PixelTransition = ({ children }) => {
                             opacity: 0,
                             scale: 1.05,
                             filter: 'blur(12px) brightness(1.5)',
-                            transition: { duration: 0.35, ease: [0.76, 0, 0.24, 1] }
+                            transition: { duration: 0.15, ease: [0.76, 0, 0.24, 1] }
                         }}
                         style={{
                             position: 'fixed',

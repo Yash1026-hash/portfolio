@@ -7,7 +7,7 @@ export const projects = [
         year: '2024',
         description: 'Smart urban traffic density estimation and signal optimization using YOLO v8l and ResNet. Achieved Top 3 out of 200+ teams at IISc Bangalore Urban Vision Hackathon.',
         techStack: ['Python', 'YOLO v8l', 'ResNet', 'OpenCV', 'Real-time Detection'],
-        githubUrl: 'https://github.com/Yash1026-hash',
+        githubUrl: null,
         liveUrl: null,
         image: '/traffic.png',
         featured: true
@@ -19,7 +19,7 @@ export const projects = [
         year: '2025',
         description: 'Five-IP AXI4-Stream digital signal processing pipeline on Xilinx Artix-7 FPGA. Implements FIR filter, FFT, decimator, interpolator, and gain control with full AXI4 compliance.',
         techStack: ['Verilog', 'Vivado', 'AXI4-Stream', 'Artix-7', 'DSP'],
-        githubUrl: 'https://github.com/Yash1026-hash',
+        githubUrl: null,
         liveUrl: null,
         image: '/quantum.png',
         featured: true
@@ -55,7 +55,7 @@ export const projects = [
         year: '2023',
         description: 'Autonomous lane-keeping car using OpenCV and Raspberry Pi 4. Achieved Top 3 at VR Siddhartha Hackathon demonstrating real-time embedded computer vision.',
         techStack: ['Python', 'OpenCV', 'Raspberry Pi 4', 'Embedded Systems'],
-        githubUrl: 'https://github.com/Yash1026-hash',
+        githubUrl: null,
         liveUrl: null,
         image: '/lane.png',
         featured: true

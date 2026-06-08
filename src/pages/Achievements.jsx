@@ -15,7 +15,7 @@ export default function Achievements() {
                         <div key={achievement.id} className="card-tactical" style={{ borderLeft: achievement.highlight ? '4px solid var(--accent-secondary)' : 'var(--hud-border)' }}>
                             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '24px' }}>
                                 <div className="mono-label" style={{ color: achievement.highlight ? 'var(--color-neon-red)' : 'var(--color-slate-gray)' }}>{achievement.category}</div>
-                                <div className="mono-label" style={{ fontSize: '10px' }}>{achievement.date}</div>
+                                <div className="mono-label" style={{ fontSize: '10px' }}>{achievement.year}</div>
                             </div>
                             <h3 style={{ fontSize: '24px', marginBottom: '16px', color: 'var(--text-primary)' }}>{achievement.title}</h3>
                             <p style={{ color: 'var(--color-ash)', opacity: 0.6, fontSize: '14px', lineHeight: '1.6' }}>{achievement.description}</p>

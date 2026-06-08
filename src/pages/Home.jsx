@@ -60,11 +60,11 @@ export default function Home() {
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.4, duration: 0.8 }}
                         >
-                            <Link to="/contact" className="btn-primary-red">
-                                CONTACT ME
+                            <Link to="/projects" className="btn-primary-red">
+                                VIEW PROJECTS
                             </Link>
-                            <Link to="/projects" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '13px', display: 'flex', alignItems: 'center', opacity: 0.7 }}>
-                                View Projects →
+                            <Link to="/contact" style={{ color: 'var(--text-primary)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: '13px', display: 'flex', alignItems: 'center', opacity: 0.7 }}>
+                                Contact Me →
                             </Link>
                         </motion.div>
                     </motion.div>
